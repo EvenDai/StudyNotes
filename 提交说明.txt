@@ -1,1 +1,2 @@
 使用Git提交时，只需要根据提示输入用户名和密码即可。用户名即为Github的登录邮箱，密码为Github的登录密码
+每次提交时都需要输入用户名和密码，可查看文章进行配置：http://blog.csdn.net/android_cai_niao/article/details/43883221
