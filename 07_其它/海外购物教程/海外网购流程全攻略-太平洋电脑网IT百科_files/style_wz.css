@@ -1,0 +1,346 @@
+/*****reset(reset.css 框架)*****/
+/*Wednesday, 24-Dec-2013 16:15:00 CST*/
+html {color:#333;background:#f5f5f5;-webkit-text-size-adjust: none; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0;padding:0;}
+body,button,input,select,textarea{font:12px/20px \5b8b\4f53,tahoma,arial;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:500;}
+input,select,textarea{font-size:100%;}
+ol,ul {list-style:none;}
+i,em { font-style: normal;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th,td {text-align:left;}
+img{border:0;vertical-align: top;}
+iframe{display:block; }
+a { color: #333; outline: none; text-decoration:none;} a:hover { color: #f60; text-decoration:underline;}
+.clear { clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden;}
+.spanclass { display: none;}
+.mark{float: left;}
+.subMark { padding-right:10px; float:right; }
+/*****layout(layout.css 框架)*****/
+/**结构**/
+.layAB,.layC { float: left;display: inline;}
+.layAB { width: 740px; margin-right:20px;}
+.layC { width: 230px;}
+.wrapper{ width: 990px;margin: 0 auto; background: #fff;}
+body .navWrap {background: none repeat scroll 0 0 #F3F3F3;border-bottom: 1px solid #E3E3E3;width: 100%;}
+body #navibar {border-bottom: medium none;}
+
+/*banner*/
+.chaTop{background: url(http://www1.pconline.com.cn/2014/itbk/images/bg.png) no-repeat left 0;text-align: left;}
+.chaLogo{float: left;}
+.chaLogo a{float: left;display: inline; height: 80px;}
+.chaLogo .pcsy{width: 120px; }
+.chaLogo .bksy{width: 85px;}
+.chaOther{float: right;}
+
+/*快搜*/
+.ks { width:330px; padding:24px 0; float:right;}
+.ks .searchItem { position:relative; zoom:1}
+.ks .searchItem .ksLink { width:28px; height:28px; position:absolute; left:2px; top:2px; z-index:10; cursor:pointer}
+.ks .searchItem input { float:left; background:url(http://www1.pconline.com.cn/2014/itbk/images/icon.png) 0 -154px no-repeat; background-color:#fff; color:#777;-webkit-appearance: none;outline: none;}
+.ks .searchItem input.focus { width:246px; padding-left:3px; background:none; background-color:#fff; color:#333;}
+.ks .searchItem .ksKeyword { width:221px; height:28px; line-height:28px; padding:0 0 0 28px; border:2px solid #ff9934; border-right:none;}
+.ks .searchItem .ksSubmit { width:79px; height:32px; line-height:32px; padding:0; background:#ff9934; border:none;  color:#fff; font-size:14px; font-weight:bold; cursor:pointer}
+/*导航条*/
+.chaNav { height:40px; line-height:40px;padding:0;background:#1f63c3;position: relative;z-index: 10;}
+.chaNav li { float:left; display:inline; border-right:1px solid #3777d2;height: 40px;position: relative;}
+.chaNav li a { padding:0 19px; display:inline-block;font-size:14px; font-weight:bold; color:#fff; position:relative; zoom:1; text-decoration:none;}
+.chaNav li a em { width:7px; height:4px;overflow: hidden; display:block; position:absolute; right:20px; top:19px;background:url(http://www1.pconline.com.cn/2014/itbk/images/icon.png) no-repeat -7px -10px;transition: all 0.3s ease-in 0s;}
+.chaNav .hover a em{-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);}
+.chaNav li a:hover {color:#fff; background:#3777d2;text-decoration:none}
+.chaNav .current { background:none;}
+.chaNav .current a,.chaNav .current a:hover{ background:#072e69; color:#fff;}
+.chaNav .hover a{color:#fff; text-decoration:none;}
+.dropNav{position: absolute;top:0;left: -1px;background: #fff;border:2px solid #3777d2;width: 111px;text-align: center;display: none;}
+.hover .dropNav{display: block;}
+.chaNav .sort{width: 113px;}
+.chaNav .sort a{padding:0 0 0 20px;width: 93px;}
+.chaNav .sort .dropNav a{padding: 0;color: #000;font-weight: normal;display: block;width: 111px;}
+.chaNav .sort .dropNav a:hover{color: #fff;}
+.chaNav .sort .dropNav .aSort{text-align: left;padding-left: 19px;font-weight: bold;height: 38px;line-height: 36px;width: 92px;}
+.chaNav li .aSort em{background-position:-16px -10px;top:17px;right: 19px;transition:none;}
+.chaNav li .aSort:hover em{background-position:-7px -10px; }
+
+.sonChaNav{height: 72px;}
+.sonChaNav .dropNav{left:0;width: 984px;background: #f1f5f9;height: 31px;border: 1px solid #e4eaf0;border-top: none;top: 40px;display: block;line-height: 30px;text-align: left;color: #ccc;padding-left: 4px;}
+.sonChaNav .dropNav a{padding: 0 6px;color: #05a;}
+.sonChaNav .dropNav a:hover{color: #f60;}
+.sonChaNav .dropNav .current{color: #333;font-weight: bold;}
+.sonChaNav .sort .dropNav .aSort{display: none;}
+/*comment*/
+.mt0{margin-top: 0;}.mt10{margin-top: 10px;}.mb10{margin-bottom: 10px;}.mb20{margin-bottom: 20px;}
+.red, .red a{color: #c00;}
+.red a:hover{color: #f60;}
+.blueBG{background: #f1f5f9;}
+.f14{font-size: 14px;}
+.fl{float: left;}.fr{float: right;}
+.imgArea {float: left;}
+.blue{color: #038;}.blue:hover{color: #f60;}
+/*标题*/
+.sTit { height:32px; line-height:32px; display:block; overflow:hidden; text-align:center; word-break:break-all; word-wrap:break-word}
+/*相关*/
+.related{color: #aaa;line-height: 24px;padding: 3px 0 0;height: 24px;overflow: hidden;}
+.related a{color: #05a;}
+.related a:hover{color: #f60;}
+
+.tbA .expTxtA{padding-left: 6px;}
+/*蓝色按钮*/
+.viewMore{padding: 11px 0;text-align: center;border-top:1px dashed #e3e3e3;}
+.aView{display: inline-block;width: 140px;height: 30px;overflow: hidden;font:bold 14px/30px "SimSun";color: #fff;background: #05a;}
+.aView:hover{color: #fff;background: #f60;text-decoration: none;}
+.bBorder{border-bottom: 1px solid #e3e3e3;}
+.imgArea { float:left; }
+
+.title-alpha{width:100%;height:30px;font:14px/30px Microsoft Yahei;overflow:hidden;text-align:center;color:#fff;position:absolute;left:0;bottom:0;background:rgba(0,0,0,0.5);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#78000000,endColorstr=#78000000)}
+a:hover .title-alpha{text-decoration:underline}
+:root .title-alpha{filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#00000000,endColorStr=#00000000)}
+.pic {display: block;position: relative;zoom: 1;overflow: hidden;}
+/*****expTxtA(expTxtA.css 框架)*****/
+/*文字链结构*/
+.expTxtA:after{content:"\20";clear:both;height:0;display:block;overflow:hidden;}
+.expTxtA { zoom:1}
+.expTxtA li { padding-left:14px; height:28px; line-height:28px; overflow:hidden; vertical-align:middle;*zoom:1; background:url(http://www1.pconline.com.cn/2014/itbk/images/icon.png) -22px -180px no-repeat;color: #777;}
+.hTxt24 li ,.moreTxt li{background-position: -22px -182px;height: 24px;line-height: 24px;}
+.expTxtA .iSub { color:#aaa;}
+.expTxtA .key{color: #333;}
+.expTxtA .iSub a { color:#777}.expTxtA .iSub a:hover { color:#f60}
+/*清除点*/
+.noMdTxt { padding:0 10px 0 4px;}
+.noMdTxt li { padding-left:0; background:none;}
+.moreTxt{width: 335px;}
+.moreTxt li{padding-right: 40px;position: relative;}
+.moreTxt li .aMore{color: #333;position: absolute;right: 0;top: 0;}
+.moreTxt li .aMore:hover{color: #f60; }
+/*pic-txtC*/
+.pic-txtC .first{padding-top:6px;}
+.pic-txtC li{width: 740px;border-bottom: 1px dashed #e3e3e3;padding: 20px 0;overflow:hidden; zoom:1}
+.pic-txtC .imgArea{margin-right: 15px;_margin-right: 12px;}
+.pic-txtC .dlTxt{padding: 0 25px 0 15px;width: auto;float: none;}
+.pic-txtC .dlTxt dt{font:16px/34px "Microsoft Yahei";height: 34px;margin: 0;overflow: hidden;}
+.pic-txtC .dlTxt dd{font-size: 14px;line-height: 26px;color: #777;text-indent: 2em;}
+.pic-txtC .dlTxt dt font{color: #c00;}
+/*无图片*/
+.noMdImg .first{padding-top:2px; }
+.noMdImg li{padding: 11px 0 14px 0;}
+/*****modBoxA(modBoxA.css 框架)*****/
+.modBoxA { margin-bottom:10px;}
+.thA { height:33px; line-height:33px;padding-bottom: 6px; overflow:hidden}
+.thA .mark { font-size:14px; font-weight:bold; color:#05a}
+.thA .mark a { color:#05a}.thA .mark a:hover { color:#f60}
+.thA .subMark { padding-top:1px;}
+.tbA{padding-bottom: 7px;}
+/*****modBoxC(modBoxC.css 框架)*****/
+.modBoxC .thC{height:33px; line-height:33px; overflow:hidden;}
+.thC .mark{ padding-left:10px; font-size:14px; font-weight:bold; color:#05a;float: left;}
+.thC .mark a { color:#05a}.thC .mark a:hover { color:#f60}
+.thC .bOrange{ background: none repeat scroll 0 0 #F60;display: inline;float: left;height: 14px;margin: 10px 0 0 0;width: 4px;}
+
+/*底部样式*/
+.footer{background: #f5f5f5;}
+html body { background:#fff;text-align: left;}
+body #bottom .links { background:none; text-align:center;}
+body #bottom .links ,body #bottom .links a { color:#919191;}
+body #bottom .sites ,body #bottom .sites a ,body #bottom .sites a:link { color:#919191;}
+body #bottom .sites a:hover ,body #bottom .sites a:visited { color:#919191;}
+body #bottom .left p ,body #bottom .left p a ,body #bottom .left p a:link { color:#919191;}
+body #bottom .mid ,body #bottom .mid a ,body #bottom .mid a:link { color:#919191;}
+/*****模块expTopA(expTopA.css)*****/
+/*排行榜*/
+.expTopA { padding:2px 10px 0 3px; zoom:1}
+.expTopA li{ height:28px; line-height:28px; padding:0 0 0 27px; position:relative; zoom:1; overflow:hidden; vertical-align:middle}
+
+.expTopA li em{ position:absolute; top:0}
+.expTopA li em { width:24px; height:28px; font:italic bold 16px/29px Arial, Helvetica, sans-serif; color:#aaa; text-align:center; letter-spacing:-2px; overflow:hidden; left:0; *left:4px; top:-1px\9;*top:-2px; vertical-align:top}
+.expTopA li em.orange { color:#f60}
+.expTopA li h6 { height:28px; margin-right:4px; font:normal 12px/28px "宋体"; position:relative; *zoom:1; z-index:3}
+.expTopA li h6 a { height:28px; position:absolute; left:0; top:0; overflow:hidden; word-break:break-all; word-wrap:break-word;}
+.expTopA li h6 a:hover { color: #f60;}
+/*分类导航*/
+.sortNav{width: 234px;}
+.sortNav a{float: left;display:inline;width: 113px;height: 30px;line-height: 30px;margin:0 4px 5px 0;background: #9CB6D9;color: #fff;text-align: center;}
+.sortNav a:hover{color: #fff;background:#83B0ED;text-decoration: none;}
+
+.sortWrap .sortNav{height: 170px;overflow: hidden;}
+.sortWrap .tbA{padding-bottom:3px;width: 230px;overflow: hidden; }
+.hWrap135 .sortNav{height: 135px;}
+/*crumb*/
+.crumb{height:50px;color: #aaa;line-height: 50px;overflow: hidden;}
+.crumb a{color: #333;}.crumb a:hover{color: #f60;}
+.crumb .Icur{font:normal 20px/50px "Microsoft Yahei";color: #05a;padding-right: 15px;float: left;}
+.crumb .Icur a{color: #05a;}
+.crumb .noLink{color: #aaa;}
+.crumb .Scur{display: inline-block;text-indent: -42px;line-height: 60px;overflow: hidden;}
+:root .crumb .Scur{line-height: 62px;}
+/*mod(turnPage.css 框架)*/
+.pconline_page{ height:25px;clear:both;text-align:center;font:400 12px/14px \5b8b\4f53; font-size:14px;padding: 15px 0 0 0;}
+.pconline_page span{margin:0 2px;padding:5px 9px 6px 10px;color:#fff;background:#f60; display:inline-block}
+.pconline_page a{padding:5px 9px 6px 10px;margin:0 2px 0 3px;color:#333;background:#eee;text-decoration:none; display:inline-block}
+.pconline_page a:hover{color:#f60;text-decoration:underline; background-color:#ffe3a6; text-decoration:none}
+.pconline_page .prev,.pconline_page .next{background:url(http://www1.pconline.com.cn/ue/2011/pcTurnPageBg_b.png) no-repeat #eee;border:none; font-size:12px}
+.pconline_page .prev{background-position:0 -50px; padding:6px 10px 5px 19px}
+.pconline_page .next{background-position:0 0; padding:6px 19px 5px 10px}
+.pconline_page a:hover.prev{background-position:0 -75px}
+.pconline_page a:hover.next{background-position:0 -25px;}
+.pconline_page .viewAll { font-size:12px; padding:6px 9px 5px 10px;}
+.pageLast{padding: 20px 0 40px 0;}
+/* 登录 */
+.GlobalLogin .close { background:url(http://www1.pconline.com.cn/ued/show/showBg.png) no-repeat 0 -29px; cursor:pointer; display:block; height:20px; margin:4px 0 0; width:20px; overflow:hidden; text-indent:-999px; }
+.GlobalLogin .close:hover { background-position:-19px -29px; }
+.GlobalLogin .close:active { background-position:-38px -29px; }
+
+.GlobalLogin .tf { text-align:center; border-top:1px solid #ddd; margin:5px; padding:5px 0; line-height:30px; color:#777; }
+.GlobalLogin .tf a { color:#05a; }
+/*login*/
+.GlobalLogin .tb table{ margin:0 auto;}
+.GlobalLogin td { line-height:43px}
+.GlobalLogin .col1{ width:60px;text-align:right;vertical-align:top; }
+.GlobalLogin .col2{ width:16px;text-align:center;color:#cc0000;}
+.GlobalLogin .col3{width:138px;}
+.GlobalLogin .col4{width:90px;}
+.GlobalLogin .col5{width:315px;}
+.GlobalLogin .col3,.GlobalLogin .col4,.GlobalLogin .col5,.GlobalLogin .col45,.GlobalLogin .col345 { font-size:12px;}
+.GlobalLogin .col12345 div{width:226px;padding-left:107px;margin-top:-4px;position:relative}
+.GlobalLogin .col12345 div ul{padding:4px 10px;border:1px solid #ffe400;background:#fffdee;font-size:12px}
+.GlobalLogin .col12345 div li{height:22px;padding:2px 0;line-height:22px;overflow:hidden}
+.GlobalLogin .col12345 div li input{vertical-align:middle;cursor:pointer}
+.GlobalLogin .col12345 div li label{cursor:pointer}
+.GlobalLogin .col12345 div span{color:#777}
+.GlobalLogin .input { width:220px; padding:4px; height:19px; line-height:19px; border:none;}
+.GlobalLogin .inputA { width:121px; padding:4px; height:19px; line-height:19px; border:none;}
+.GlobalLogin .grayInput{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat}
+.GlobalLogin .grayInputA{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat 0px -84px}
+.GlobalLogin .yelInput{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat 0px -28px}
+.GlobalLogin .yelInputA{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat 0px -112px}
+.GlobalLogin .redInput{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat 0px -56px}
+.GlobalLogin .redInputA{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat 0px -140px}
+.GlobalLogin .judgeIcon{width:24px;height:43px;display:block;float:left}
+.GlobalLogin .blueIcon{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat 0px -168px}
+.GlobalLogin .redIcon{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat -25px -168px}
+.GlobalLogin .yelTxt,.GlobalLogin .redTxt{width:289px;height:43px;float:left;line-height:43px;text-indent:18px;color:#777;overflow:hidden}
+.GlobalLogin .yelTxt{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat -229px 0px}
+.GlobalLogin .redTxt{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat -229px -40px}
+.GlobalLogin .yelTxtA,.GlobalLogin .redTxtA{width:184px;height:43px;float:left;line-height:43px;text-indent:18px;color:#777;overflow:hidden}
+.GlobalLogin .yelTxtA{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat -519px 0px}
+.GlobalLogin .redTxtA{background:url(http://www1.pconline.com.cn/center/20100727/images/spriteA.png) no-repeat -519px -40px}
+.show{display:block}
+.hide{display:none}
+.GlobalLogin  .changeCode{width:105px;height:43px;display:block;float:left;line-height:43px;text-indent:8px;}
+.GlobalLogin .regbut {background:#27c; border:none; cursor:pointer; width:82px; display:inline-block; text-align:center; font-size:14px; color:#fff; line-height:27px; height:27px; font-weight:bold; }
+.GlobalLogin .getpass{ color:#05a; margin-left:5px; font-size:12px; text-decoration:none;}
+
+.GlobalLogin .expFB{z-index:999;background:#fff;display:none;font-size:12px; position:fixed; _position:absolute; left:50%; top:50%;_top:expression(documentElement.scrollTop+(documentElement.clientHeight/2)); margin:-132px 0 0 -240px;border:1px solid #666; height:260px; overflow:hidden;line-height:22px; width:480px; font-style:normal;}
+
+
+.GlobalLogin .floBG{width:100%;z-index:998;top:0;left:0; margin:0; padding:0; height:100%;background:#000;position:fixed;_position:absolute;filter:alpha(opacity=50);opacity:0.5;_height:expression(documentElement.scrollTop+documentElement.clientHeight);_width:expression(document.documentElement.clientWidth); display:none;}
+
+.GlobalLogin .expFB .addcmt{padding:10px 15px;}
+.GlobalLogin .expFB .th { background:url(http://www1.pconline.com.cn/ued/show/bg1.png) repeat-x; height:31px; overflow:hidden; padding:0 10px; font-size:14px; line-height:31px; border:none;}
+
+.GlobalLogin .expFB .th .mark{ padding-left:0; background:none; margin:0; line-height:31px; font-weight:bold; color:#000; float:left;}
+.GlobalLogin .expFB .subMark { padding-right:0; float:right;}
+.GlobalLogin .expFB .tb{ background:none; border:none;}
+
+.GlobalLogin #bestLogFrame {display: none;} 
+.layC{margin-top: -18px;}
+.crumb{margin-left: 10px;height:50px;line-height: 40px;text-indent: -42px;overflow: hidden;}
+/*文章结构*/
+.artCon { width:740px;overflow:hidden;padding-bottom: 21px}
+.artCon p { line-height:26px;}
+.art_hd { padding:14px 10px 23px; border-bottom:1px dashed #ccc; text-align:center}
+.art_hd h1 { font:normal 28px/42px "Microsoft YaHei";}
+.art_hd p { color:#777}
+.art_hd p b { font-weight:normal; color:#333;}
+.art_hd .cmtCount a:hover em {color: #f60}
+.art_bd { padding:5px 10px 0;} 
+.art_hd .ptime{height: 26px; text-align: center; margin-bottom: -10px; padding-top: 5px; color: #999}
+
+/*文章内容*/
+.content { padding:0 10px; line-height:26px;}
+.content img {max-width:500px;_width:expression((this.offsetWidth > 500) ? '500px' : true)} 
+.content p { height:auto; margin:18px 0; font-size:14px; overflow:visible}
+.content a { color:#038}.content a:hover { color:#f60}
+.content h2 { width: 100% !important; margin: 5px auto !important;}
+.content .cmsLink { border-bottom: 1px dashed #003388;}
+.content .cmsLink:hover { border-color: #FF6600; text-decoration: none;}
+
+
+/*文章导航*/
+.art_nav_box { padding:15px 20px; border-top:1px dashed #e3e3e3;}
+.topNavBox { margin:0 10px 10px; padding:0 15px; border:none;}
+.art_nav_box table { width:100%; background:none}
+.art_nav_box table td { line-height:24px;}
+.art_nav_box .art_nav_t { padding-bottom:3px; background:none #fff; text-align:left}
+.art_nav_box .art_nav_t strong { font-size:14px;}
+.art_nav_box .article_brief_tb { color:#777}
+.art_nav_box .article_brief_tb a{ color:#038}.art_nav_box .article_brief_tb a:hover{ color:#f60}
+.art_nav_box .article_brief_tb .current_page { font-weight:bold; color:#c00}
+
+.artOpenShare2{padding: 19px 0 0 0;overflow: hidden;}
+.wbBtn, .QQshareBtn{float: left;display: inline; }
+
+/*翻页提示*/
+.pageTips{width:175px; height:22px; margin:-20px auto 25px; padding:0px 25px 0 10px; line-height:22px; color:#777; border:1px solid #f5ce9d; background:#fffbef; position:relative; display:none;}
+.pageTips i{display:block; width:10px; height:11px; position:absolute; top:6px; right:7px; cursor:pointer; background:url(http://www1.pconline.com.cn/2012/art/images/art_bg.png) -32px 0  no-repeat;}
+.pageLast{padding: 0 0 25px 0;}
+
+.wTxt231 li{float: left;width: 231px;}
+.reEntry{padding:10px 0 20px;border-top: 1px solid #e3e3e3;}
+.reEntry .tbC{margin: -1px 0 0 -3px;}
+/*新增按钮*/
+.artTools{padding:10px 0 32px 140px;}
+.artTools .vote{float: left;display: inline;width: 110px;height: 30px;color: #fff;text-align: center;line-height: 30px;margin-right: 5px;background:url(http://www1.pconline.com.cn/2012/art/images/art_bg.png) no-repeat 0 -236px;cursor: pointer;position: relative;}
+.artTools .iTip{position: absolute;width: 110px;height: 22px;padding-bottom: 4px;background: url(http://www1.pconline.com.cn/2012/art/images/art_bg.png) no-repeat 0 -360px;top:-31px;left: 0;color: #333;line-height: 22px;text-align: center;display: none;}
+.artTools .done .iTip{display: block;}
+.artTools .col{background-position: 0 -174px;}
+.artTools .sha{width: 110px;height: 30px;color: #fff;text-align: center;display:block;background:url(http://www1.pconline.com.cn/2012/art/images/art_bg.png) no-repeat 0 -298px;}
+.artTools .vote:hover{background-position: 0 -267px;color: #fff;text-decoration: none;}
+.artTools .col:hover{background-position: 0 -205px;}
+.artTools .sha:hover,.artTools .share:hover .sha {background-position: 0 -329px;color: #fff;text-decoration: none;}
+.artTools .vote span{display: inline-block;padding-left: 5px;position: relative\9;top:1px\9;}
+.artTools .vote .icon{display: inline-block;width: 17px;height: 19px;background: url(http://www1.pconline.com.cn/2012/art/images/art_bg.png) no-repeat 0 -101px;vertical-align: middle;position: relative;height: 18px\9;}
+.artTools .pra .icon{background-position: -18px -101px;}
+.artTools .neg .icon{background-position: -36px -101px;}
+.artTools .sha .icon{background-position: -54px -101px;}
+.artTools .vote:hover .icon{background-position: 0 -82px;}
+.artTools .pra:hover .icon{background-position: -18px -82px;}
+.artTools .neg:hover .icon{background-position: -36px -82px;}
+.artTools .sha:hover .icon,.artTools .share:hover .icon{background-position: -54px -82px;}
+.artTools .share{background: none}
+.artTools .share .ctn{height:26px;overflow:hidden;position:absolute;left:0;top:30px;padding-top:5px;width:168px;display:none;background-color:#fff}
+.artTools .hover .ctn{display: block;}
+.artTools .bdsharebuttonbox a{width: 26px;height: 26px;background: url(http://www1.pconline.com.cn/2012/art/images/art_bg.png) no-repeat 0 -120px;padding: 0;margin:0 2px 0 0;filter:alpha(opacity=70);opacity:0.7;}
+.artTools .bdsharebuttonbox .qzone{background-position: -27px -120px ;}
+.artTools .bdsharebuttonbox .tsina{background-position: -54px -120px ;}
+.artTools .bdsharebuttonbox .tqq{background-position: 0 -147px;}
+.artTools .bdsharebuttonbox .renren{background-position: -27px -147px;}
+.artTools .bdsharebuttonbox .kaixin001{background-position: -54px -147px;}
+.artTools .bdsharebuttonbox a:hover{filter:alpha(opacity=100);opacity:1;}
+
+.viewMore{padding:0;border-top: none;}
+.pageNumber,.topNavBox{display: none;} 
+.ztBox .wPic210{padding: 10px 10px 0 10px;}
+
+/*相关阅读*/
+.RelatedRead{padding:10px;margin:18px 0;border-top:1px solid #d4ddec;border-bottom:1px solid #d4ddec; clear:both}
+.RelatedRead p { margin:10px 0 0; text-align:left}
+
+/* 热门商品推荐 */
+.hotProRecomment{padding:0 20px 0;margin:0 0 15px 0;display:none;}
+.hotProRecomment .tit{font-size:12px;line-height:42px;}
+.pics:after{content:"\20";clear:both;height:0;display:block;overflow:hidden;}
+.pics {zoom:1}
+.pics li{float:left; display:inline; text-align:center;}
+.pics li .pic {display:block; position:relative; zoom:1;}
+
+.pics-w210{padding:15px 12px 15px 13px;overflow:hidden;background-color:#f1f4f9;}
+.pics-w210 li {width:210px;margin:0 8px 0 7px;}
+.title-alpha {width:100%; height:30px; line-height:30px; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#70000000, endColorstr=#70000000); background:rgba(0,0,0,0.5);_zoom:1; position:absolute; left:0; bottom:0; overflow:hidden; text-align:center;word-wrap:break-word; cursor:pointer; color:#fff}
+a:hover .title-alpha {color:#fff;text-decoration:underline;}
+
+.ztBox{display:none;}
+.mt-17 .tbA {padding-bottom:0;}
+.mt-17 .wPic210{padding-top:7px;}
+.mt-17 .wPic210 li{margin-bottom:7px}
+
+/*右侧跟随悬浮 2015年8月11日 白舜*/
+.fixRTop {position:fixed;_position:absolute;top:0;_top:expression(documentElement.scrollTop + "px");}
