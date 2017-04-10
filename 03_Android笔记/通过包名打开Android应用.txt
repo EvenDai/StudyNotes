@@ -1,0 +1,28 @@
+可以这样：1.先查找出设备中所有安装的程序。2获得程序的包名。3打开应用
+//获得所有已经安装的程序
+List<ApplicationInfo> ls= getPackageManager().getInstalledApplications(0);
+//获得包名
+String packName = ls.get(i).packageName;
+//打开应用程序
+getPackageManager().getLaunchIntentForPackage(packName);
+
+
+ 今天做开发时，遇到了一个难以解决的应用，弄了3个小时，才弄出来的。Google了一下，没有我写的这种方法（只有4条，还都一样，英文的，貌似是API文档，没细看，更别提Baidu了，只查到了一条，是API帮助文档）。 
+    应用场景：对于我们自己开发的两个应用程序，一个应用程序的包名为 aa.bb.cc，软件名叫a，它的入口Activity为 aaActivity（入口activity就是在AndroidManifest.xml中标签——<action android:name="android.intent.action.MAIN" />所在的activity，说白了，就是打开应用程序，第一个显示的activity），另一个应用程序的包名为 xx.yy.zz，软件名叫x，它的入口Activity为 xxActivity。 
+    网上的通用做法如下（这里我假设a中有一个Button，这个Button的onclick事件中的代码如下）： 
+    ComponentName componentName=new   ComponentName("xx.yy.zz","xx.yy.zz.xxActivity");   
+                Intent intent=new Intent();   
+                intent.setComponent(componentName);   
+                intent.setAction(Intent.ACTION_VIEW);   
+                startActivity(intent); 
+    这种方法对于调用我们自己写的应用程序没有问题，但是如果你想调用别人的应用程序（例如：你写了一个游戏管理的软件，需要管理很多游戏，但是游戏不是你写的，你是得不到入口activity的，你怎么办？），解决办法如下： 
+    通过PackageManager可以得到PackageInfo，通过PackageInfo就可以得到你手机上安装的应用的包名（这个很简单，网上有的是，不赘述）。关键是下一步，代码如下（也是a应用中Button的onclick中的代码）： 
+    PackageManager packageManager = Start_RemoveSoftActivity.this.getPackageManager(); 
+Intent intent=new Intent(); 
+    try { 
+    intent =packageManager.getLaunchIntentForPackage("要调用应用的包名"); 
+} catch (NameNotFoundException e) { 
+Log.i(TAG, e.toString()); 
+} 
+startActivity(intent); 
+    其中，"要调用应用的包名"为通过PackageInfo得到的想要启动的应用的包名。这样，我们就可以不知道别人应用源码的情况下，也可以调用别人的应用程序。
