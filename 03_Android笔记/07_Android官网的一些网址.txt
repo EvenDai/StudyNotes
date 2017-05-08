@@ -1,3 +1,10 @@
 Android版本：https://developer.android.com/about/index.html
 Gradle插件：https://developer.android.com/studio/releases/gradle-plugin.html
 压缩代码和资源：https://developer.android.com/studio/build/shrink-code.html 
+Google官网示例代码：https://github.com/googlesamples/
+展示使用不同工具和模式的Todo app示例代码：https://github.com/googlesamples/android-architecture， 示例代码的分析：https://github.com/googlesamples/android-architecture/wiki/Samples-at-a-glance
+Android测试示例：https://github.com/googlesamples/android-testing
+Google在Github：https://github.com/google
+MVP官方Wiki：https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
+Google官方Android开发技术博客：https://android-developers.googleblog.com/ 需要翻墙，这里面的文章会有年份月份进行分类。
+android-design-support-library使用：https://android-developers.googleblog.com/2015/05/android-design-support-library.html
