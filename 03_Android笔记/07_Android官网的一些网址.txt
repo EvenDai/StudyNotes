@@ -1,4 +1,4 @@
-Android版本：https://developer.android.com/about/index.html
+Android各版本介绍：https://developer.android.com/about/index.html
 Gradle插件：https://developer.android.com/studio/releases/gradle-plugin.html
 压缩代码和资源：https://developer.android.com/studio/build/shrink-code.html 
 Google官网示例代码：https://github.com/googlesamples/
@@ -6,5 +6,29 @@ Google官网示例代码：https://github.com/googlesamples/
 Android测试示例：https://github.com/googlesamples/android-testing
 Google在Github：https://github.com/google
 MVP官方Wiki：https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
+
 Google官方Android开发技术博客：https://android-developers.googleblog.com/ 需要翻墙，这里面的文章会有年份月份进行分类。
+
+支持库功能：https://developer.android.com/topic/libraries/support-library/features.html
+Fragment使用：https://developer.android.com/guide/components/fragments.html
+
+
 android-design-support-library使用：https://android-developers.googleblog.com/2015/05/android-design-support-library.html
+material-design官方开发文档：https://developer.android.com/training/material/index.html
+material-design官网：http://www.google.com/design/spec/material-design/introduction.html， https://material.io/，https://material.io/guidelines/，中文翻译：http://design.1sters.com/#，http://wiki.jikexueyuan.com/project/material-design/components/bottom-sheets.html
+
+Android Youtube官网视频（包括Google I/O大会）：https://www.youtube.com/user/androiddevelopers，优酷版本：http://i.youku.com/googledevelopers
+谷歌设计：https://design.google.com/
+
+
+示例Demo：https://developer.android.com/samples/index.html
+
+
+Google Developers中国网站 (developers.google.cn)于2016年12月8日 正式发布，Google Developers 是由谷歌公司特别为中国开发者而建立的，它汇集了 Google 为全球开发者所提供的开发技术资源，包括 API 文档、开发案例、技术培训的视频等资源，帮助中国开发者 Develop (开发)、Grow (成长) 与 Earn (营利)。
+网站内的链接:
+	Android：developer.android.google.cn 问题：似乎不全
+	Web：developers.google.cn/web
+	Tensor Flow：www.tensorflow.org
+	Google Play：developer.android.com/distribute/googleplay/index.html
+	AdMob（用于广告）：firebase.google.cn/docs/admob
+	Firebase：firebase.google.cn  Firebase是一个移动平台，可以帮助开发者快速开发高品质应用，扩大用户群，并赚取更多收益。Firebase由多种互补功能组成，您可以自行组合和匹配这些功能以满足自己的需求
