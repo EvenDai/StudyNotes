@@ -12,6 +12,9 @@ Google官方Android开发技术博客：https://android-developers.googleblog.co
 支持库功能：https://developer.android.com/topic/libraries/support-library/features.html
 Fragment使用：https://developer.android.com/guide/components/fragments.html
 
+Google官方检查apk是否是v2签名工具：https://android.googlesource.com/platform/tools/apksig ， https://source.android.com/security/apksigning/v2
+一个关于APK Signature Scheme v2签名的神奇bug定位经历：http://www.open-open.com/lib/view/open1487060051641.html
+
 
 android-design-support-library使用：https://android-developers.googleblog.com/2015/05/android-design-support-library.html
 material-design官方开发文档：https://developer.android.com/training/material/index.html
@@ -24,6 +27,9 @@ Android Youtube官网视频（包括Google I/O大会）：https://www.youtube.co
 示例Demo：https://developer.android.com/samples/index.html
 
 
+AndroidStuio的所有版本下载：https://developer.android.com/studio/archive.html
+关于instant-run：https://developer.android.com/studio/run/index.html?utm_source=android-studio#instant-run
+
 Google Developers中国网站 (developers.google.cn)于2016年12月8日 正式发布，Google Developers 是由谷歌公司特别为中国开发者而建立的，它汇集了 Google 为全球开发者所提供的开发技术资源，包括 API 文档、开发案例、技术培训的视频等资源，帮助中国开发者 Develop (开发)、Grow (成长) 与 Earn (营利)。
 网站内的链接:
 	Android：developer.android.google.cn 问题：似乎不全
@@ -32,3 +38,13 @@ Google Developers中国网站 (developers.google.cn)于2016年12月8日 正式�
 	Google Play：developer.android.com/distribute/googleplay/index.html
 	AdMob（用于广告）：firebase.google.cn/docs/admob
 	Firebase：firebase.google.cn  Firebase是一个移动平台，可以帮助开发者快速开发高品质应用，扩大用户群，并赚取更多收益。Firebase由多种互补功能组成，您可以自行组合和匹配这些功能以满足自己的需求
+	
+	
+https://github.com/chrisbanes/cheesesquare  这个项目演示新的Android设计库。这不是一个详尽的示例,但显示了一些重要功能的设计库：
+Collapsing Toolbar
+FloatingActionButton
+View anchoring
+NavigationView
+Snackbar
+	
+	

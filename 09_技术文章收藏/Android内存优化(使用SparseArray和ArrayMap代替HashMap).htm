@@ -1,0 +1,1400 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>  
+
+        
+    <link rel="canonical" href="http://blog.csdn.net/"/> 
+
+   
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Android内存优化（使用SparseArray和ArrayMap代替HashMap） - 【博客地址永久迁移到】：http://zhengxiaoyong.me
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="在Android开发时，我们使用的大部分都是Java的api，比如HashMap这个api，使用率非常高，但是对于Android这种对内存非常敏感的移动平台，很多时候使用一些java的api并不能达到更好的性能，相反反而更消耗内存，所以针对Android这种移动平台，也推出了更符合自己的api，比如SparseArray、ArrayMap用来代替HashMap在有些情况下能带来更好的性能提升。介绍它" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://static.blog.csdn.net/scripts/jquery-version.js"></script>
+    
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/tracking.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/skin-blue/css/style.css?v=1.1" />
+
+    
+
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/u010687392/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/blue.css" />
+ 
+
+     
+</head>
+
+
+<body class=csdn-tracking-statistics  data-mod=popu_307>
+       
+
+
+
+    <!-- 广告位开始 -->
+        
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/u010687392">【博客地址永久迁移到】：http://zhengxiaoyong.me</a></h2>
+            <h3>新博客将不在此处发表！</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        
+     
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>           
+                <li id="btnContents"><a href="http://blog.csdn.net/u010687392?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/u010687392?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/u010687392/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "u010687392";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/u010687392";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/71710175">
+<font color=blue><strong>【有奖征文】Bluemix云上实践征集喽~ </strong></font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp
+
+<a href="http://bss.csdn.net/m/product/python_creative
+">
+<font color=red><strong>Python 创意编程活动</strong></font></a>
+&nbsp;&nbsp;&nbsp;&nbsp
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/72084763">
+<font color=blue><strong>CSDN日报20170514 ——《聪明的老板才不招工资低的程序员》
+</strong>
+</font></a>
+</div>                        </div>
+                        
+
+
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+
+
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+
+<script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+      
+      var fasrc="http://my.csdn.net/my/favorite/miniadd?t=Android%e5%86%85%e5%ad%98%e4%bc%98%e5%8c%96%ef%bc%88%e4%bd%bf%e7%94%a8SparseArray%e5%92%8cArrayMap%e4%bb%a3%e6%9b%bfHashMap%ef%bc%89&u=http://blog.csdn.net/u010687392/article/details/47809295"
+
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/u010687392/article/details/47809295">
+        Android内存优化（使用SparseArray和ArrayMap代替HashMap）            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/android' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">android</a><a href='http://www.csdn.net/tag/%e5%86%85%e5%ad%98' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">内存</a><a href='http://www.csdn.net/tag/%e4%bc%98%e5%8c%96' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">优化</a><a href='http://www.csdn.net/tag/ArrayMap' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">ArrayMap</a><a href='http://www.csdn.net/tag/Sparse' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">Sparse</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2015-08-20 16:06</span>
+            <span class="link_view" title="阅读次数">27179人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(14)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('Android%e5%86%85%e5%ad%98%e4%bc%98%e5%8c%96%ef%bc%88%e4%bd%bf%e7%94%a8SparseArray%e5%92%8cArrayMap%e4%bb%a3%e6%9b%bfHashMap%ef%bc%89','47809295');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(47809295,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody"  style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script  type="text/javascript">
+        $(function () {
+            try
+            {
+                var lib = eval("("+$("#lib").attr("value")+")");
+                var html = "";
+                if (lib.err == 0) {
+                    $.each(lib.data, function (i) {
+                        var obj = lib.data[i];
+                        //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                        html += ' <a href="' + obj.url + '" target="_blank">';
+                        html += ' <img src="' + obj.logo + '">';
+                        html += ' <em><b>' + obj.name + '</b></em>';
+                        html += ' </a>';
+                    });
+                    if (html != "") {
+                        setTimeout(function () {
+                            $("#lib").html(html);                      
+                            $("#embody").show();
+                        }, 100);
+                    }
+                }      
+            } catch (err)
+            { }
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('3197917','u010687392','top','47809295');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Android性能优化<em>（15）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/u010687392/article/category/3197917"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_3197917">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。转载注明出处：Sunzxyong</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+        <div class="markdown_views"><p>在Android开发时，我们使用的大部分都是Java的api，比如HashMap这个api，使用率非常高，但是对于Android这种对内存非常敏感的移动平台，很多时候使用一些java的api并不能达到更好的性能，相反反而更消耗内存，所以针对Android这种移动平台，也推出了更符合自己的api，比如SparseArray、ArrayMap用来代替HashMap在有些情况下能带来更好的性能提升。</p>
+
+<p>介绍它们之前先来介绍一下HashMap的内部存储结构，就明白为什么推荐使用SparseArray和ArrayMap</p>
+
+
+
+<h2 id="hashmap"><strong>HashMap</strong></h2>
+
+<p>HashMap内部是使用一个默认容量为16的数组来存储数据的，而数组中每一个元素却又是一个链表的头结点，所以，更准确的来说，HashMap内部存储结构是使用哈希表的拉链结构（数组+链表），如图： <br>
+这种存储数据的方法叫做拉链法 <br>
+<img src="http://img.blog.csdn.net/20150820130200565" alt="这里写图片描述" title=""> <br>
+且每一个结点都是Entry类型，那么Entry是什么呢？我们来看看HashMap中Entry的属性：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs java"><span class="hljs-keyword">final</span> K key;
+V value;
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> hash;
+HashMapEntry&lt;K, V&gt; next;</code></pre>
+
+<p>从中我们得知Entry存储的内容有key、value、hash值、和next下一个Entry，那么，这些Entry数据是按什么规则进行存储的呢？就是通过计算元素key的hash值，然后对HashMap中数组长度取余得到该元素存储的位置，计算公式为hash(key)%len，比如：假设hash(14)=14,hash(30)=30,hash(46)=46，我们分别对len取余，得到 <br>
+hash(14)%16=14，hash(30)%16=14，hash(46)%16=14，所以key为14、30、46的这三个元素存储在数组下标为14的位置，如： <br>
+<img src="http://img.blog.csdn.net/20150820133048242" alt="这里写图片描述" title=""> <br>
+从中可以看出，如果有多个元素key的hash值相同的话，后一个元素并不会覆盖上一个元素，而是采取链表的方式，把之后加进来的元素加入链表末尾，从而解决了hash冲突的问题，由此我们知道HashMap中处理hash冲突的方法是链地址法，在此补充一个知识点，处理hash冲突的方法有以下几种：</p>
+
+<ol>
+<li>开放地址法</li>
+<li>再哈希法</li>
+<li>链地址法</li>
+<li>建立公共溢出区</li>
+</ol>
+
+<p>讲到这里，重点来了，我们知道HashMap中默认的存储大小就是一个容量为16的数组，所以当我们创建出一个HashMap对象时，即使里面没有任何元素，也要分别一块内存空间给它，而且，我们再不断的向HashMap里put数据时，当达到一定的容量限制时（这个容量满足这样的一个关系时候将会扩容：HashMap中的数据量&gt;容量*加载因子，而HashMap中默认的加载因子是0.75），HashMap的空间将会扩大，而且扩大后新的空间一定是原来的2倍，我们可以看put()方法中有这样的一行代码：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs fix"><span class="hljs-attribute">int newCapacity </span>=<span class="hljs-string"> oldCapacity * 2;</span></code></pre>
+
+<p>所以，重点就是这个，只要一满足扩容条件，HashMap的空间将会以2倍的规律进行增大。假如我们有几十万、几百万条数据，那么HashMap要存储完这些数据将要不断的扩容，而且在此过程中也需要不断的做hash运算，这将对我们的内存空间造成很大消耗和浪费，而且HashMap获取数据是通过遍历Entry[]数组来得到对应的元素，在数据量很大时候会比较慢，所以在Android中，HashMap是比较费内存的，我们在一些情况下可以使用SparseArray和ArrayMap来代替HashMap。</p>
+
+
+
+<h2 id="sparsearray"><strong>SparseArray</strong></h2>
+
+<p>SparseArray比HashMap更省内存，在某些条件下性能更好，主要是因为它避免了对key的自动装箱（int转为Integer类型），它内部则是通过两个数组来进行数据存储的，一个存储key，另外一个存储value，为了优化性能，它内部对数据还采取了压缩的方式来表示稀疏数组的数据，从而节约内存空间，我们从源码中可以看到key和value分别是用数组表示：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] mKeys;
+    <span class="hljs-keyword">private</span> Object[] mValues;</code></pre>
+
+<p>我们可以看到，SparseArray只能存储key为int类型的数据，同时，SparseArray在存储和读取数据时候，使用的是二分查找法，我们可以看看：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs r"> public void put(int key, E value) {
+        int i = ContainerHelpers.binarySearch(mKeys, mSize, key);
+        <span class="hljs-keyword">...</span>
+        }
+ public E get(int key, E valueIfKeyNotFound) {
+        int i = ContainerHelpers.binarySearch(mKeys, mSize, key);
+        <span class="hljs-keyword">...</span>
+        }</code></pre>
+
+<p>也就是在put添加数据的时候，会使用二分查找法和之前的key比较当前我们添加的元素的key的大小，然后按照从小到大的顺序排列好，所以，SparseArray存储的元素都是按元素的key值从小到大排列好的。 <br>
+而在获取数据的时候，也是使用二分查找法判断元素的位置，所以，在获取数据的时候非常快，比HashMap快的多，因为HashMap获取数据是通过遍历Entry[]数组来得到对应的元素。</p>
+
+
+
+<h3 id="添加数据">添加数据</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">put</span>(<span class="hljs-keyword">int</span> key, E <span class="hljs-keyword">value</span>)</code></pre>
+
+
+
+<h3 id="删除数据">删除数据</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span>(<span class="hljs-keyword">int</span> key)</code></pre>
+
+<p>or</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delete</span>(<span class="hljs-keyword">int</span> key)</code></pre>
+
+<p>其实remove内部还是通过调用delete来删除数据的</p>
+
+
+
+<h3 id="获取数据">获取数据</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> E <span class="hljs-title">get</span>(<span class="hljs-keyword">int</span> key)</code></pre>
+
+<p>or</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> E <span class="hljs-title">get</span>(<span class="hljs-keyword">int</span> key, E valueIfKeyNotFound)</code></pre>
+
+<p>该方法可设置如果key不存在的情况下默认返回的value</p>
+
+
+
+<h3 id="特有方法">特有方法</h3>
+
+<p>在此之外，SparseArray还提供了两个特有方法，更方便数据的查询： <br>
+获取对应的key：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">keyAt</span>(<span class="hljs-keyword">int</span> index)</code></pre>
+
+<p>获取对应的value：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> E <span class="hljs-title">valueAt</span>(<span class="hljs-keyword">int</span> index)</code></pre>
+
+
+
+<h3 id="sparsearray应用场景"><strong>SparseArray应用场景：</strong></h3>
+
+<p>虽说SparseArray性能比较好，但是由于其添加、查找、删除数据都需要先进行一次二分查找，所以在数据量大的情况下性能并不明显，将降低至少50%。</p>
+
+<p>满足下面两个条件我们可以使用SparseArray代替HashMap：</p>
+
+<ul>
+<li>数据量不大，最好在千级以内</li>
+<li>key必须为int类型，这中情况下的HashMap可以用SparseArray代替：</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">HashMap&lt;<span class="hljs-built_in">Integer</span>, <span class="hljs-built_in">Object</span>&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+用SparseArray代替:
+SparseArray&lt;<span class="hljs-built_in">Object</span>&gt; array = <span class="hljs-keyword">new</span> SparseArray&lt;&gt;();</code></pre>
+
+
+
+<h2 id="arraymap"><strong>ArrayMap</strong></h2>
+
+<p>这个api的资料在网上可以说几乎没有，然并卵，只能看文档了 <br>
+ArrayMap是一个&lt;<strong>key,value</strong>&gt;映射的数据结构，它设计上更多的是考虑内存的优化，内部是使用两个数组进行数据存储，一个数组记录key的hash值，另外一个数组记录Value值，它和SparseArray一样，也会对key使用二分法进行从小到大排序，在添加、删除、查找数据的时候都是先使用二分查找法得到相应的index，然后通过index来进行添加、查找、删除等操作，所以，应用场景和SparseArray的一样，如果在数据量比较大的情况下，那么它的性能将退化至少50%。</p>
+
+
+
+<h3 id="添加数据-1">添加数据</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> V <span class="hljs-title">put</span>(K key, V <span class="hljs-keyword">value</span>)</code></pre>
+
+
+
+<h3 id="获取数据-1">获取数据</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet"><span class="hljs-keyword">public</span> V <span class="hljs-keyword">get</span>(<span class="hljs-built_in">Object</span> <span class="hljs-keyword">key</span>)</code></pre>
+
+
+
+<h3 id="删除数据-1">删除数据</h3>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet"><span class="hljs-keyword">public</span> V remove(<span class="hljs-built_in">Object</span> <span class="hljs-keyword">key</span>)</code></pre>
+
+
+
+<h3 id="特有方法-1">特有方法</h3>
+
+<p>它和SparseArray一样同样也有两个更方便的获取数据方法：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs cs"><span class="hljs-keyword">public</span> K <span class="hljs-title">keyAt</span>(<span class="hljs-keyword">int</span> index)
+<span class="hljs-keyword">public</span> V <span class="hljs-title">valueAt</span>(<span class="hljs-keyword">int</span> index)</code></pre>
+
+
+
+<h3 id="arraymap应用场景"><strong>ArrayMap应用场景</strong></h3>
+
+<ul>
+<li>数据量不大，最好在千级以内</li>
+<li>数据结构类型为Map类型</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">ArrayMap<span class="hljs-tag">&lt;<span class="hljs-title">Key,</span> <span class="hljs-attribute">Value</span>&gt;</span> arrayMap = new ArrayMap<span class="hljs-tag">&lt;&gt;</span>();</code></pre>
+
+<p>【注】：如果我们要兼容aip19以下版本的话，那么导入的包需要为v4包</p>
+
+<pre class="prettyprint"><code class=" hljs avrasm">import android<span class="hljs-preprocessor">.support</span><span class="hljs-preprocessor">.v</span>4<span class="hljs-preprocessor">.util</span><span class="hljs-preprocessor">.ArrayMap</span><span class="hljs-comment">;</span></code></pre>
+
+<h2 id="总结"><strong>总结</strong></h2>
+
+<p>SparseArray和ArrayMap都差不多，使用哪个呢？ <br>
+假设数据量都在千级以内的情况下：</p>
+
+<blockquote>
+  <p>1、如果key的类型已经确定为int类型，那么使用SparseArray，因为它避免了自动装箱的过程，如果key为long类型，它还提供了一个LongSparseArray来确保key为long类型时的使用</p>
+  
+  <p>2、如果key类型为其它的类型，则使用ArrayMap</p>
+</blockquote></div>
+        <script  type="text/javascript">
+            $(function () {
+                $('pre.prettyprint code').each(function () {
+                    var lines = $(this).text().split('\n').length;
+                    var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                    $(this).addClass('has-numbering').parent().append($numbering);
+                    for (i = 1; i <= lines; i++) {
+                        $numbering.append($('<li/>').text(i));
+                    };
+                    $numbering.fadeIn(1700);
+                });
+            });
+        </script>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.14-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+<script type="text/javascript">
+    var fromjs = $("#fromjs");
+    if (fromjs.length > 0) {
+            $("#fromjs .markdown_views pre").addClass("prettyprint");
+            prettyPrint();
+
+            $('pre.prettyprint code').each(function () {
+                var lines = $(this).text().split('\n').length;
+                var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                $(this).addClass('has-numbering').parent().append($numbering);
+                for (i = 1; i <= lines; i++) {
+                    $numbering.append($('<li/>').text(i));
+                };
+                $numbering.fadeIn(1700);
+            });
+
+            $('.pre-numbering li').css("color", "#999");
+        }
+
+    
+    $(".markdown_views a[target!='_blank']").attr("target", "_blank");
+
+    $(".toc a[target='_blank']").attr("target", "");
+
+</script>
+
+ 
+
+
+        <div id="digg" ArticleId="47809295" >
+            <dl id="btnDigg" class="digg digg_disable"  onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>22</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable"  onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>2</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a href="javascript:void(0);" >&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a href="javascript:void(0);" >&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/u010687392/article/details/47682641';">上一篇</span><a href="/u010687392/article/details/47682641" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Volley网络框架完全解析（实战篇）</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/u010687392/article/details/47813475';">下一篇</span><a href="/u010687392/article/details/47813475" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Android性能优化典例（一）</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('3197917','u010687392','foot','47809295');">Android性能优化<em>（15）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('3197917', 'u010687392','foot','47809295');
+        });
+    </script>
+      
+</div>
+
+     <div>
+           
+
+         <script type="text/javascript">
+             /*博客内容页下方Banner1-960*90，创建于2016-12-13*/
+             var cpro_id = "u2843955";
+        </script>
+        <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+    </div>
+
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/u010687392/svc/GetSuggestContent/47809295",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="http://static.blog.csdn.net/css/replace.css"/>
+<div id="relate" data-mod="popu_218"  class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+    <div class="embody embody_b" id="libkeyparent"  style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "47809295",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+            
+            setEduLoc();
+
+            function setEduLoc() {               
+                var edus = $("#adCollege div dd a");
+                if (edus.length == 0) {
+                    setTimeout(function () {
+                        setEduLoc();
+                    }, 500);
+                }
+                else {
+                    var eduLoc = "?ref=blog&loc=0";
+                    $.each(edus, function (index,item) {
+                        var href = $(this).attr("href") + eduLoc;
+                        $(this).attr("href", href);
+                    });
+                }
+            }
+
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+
+
+
+    <div id="ad_cen">        
+                <div>
+                                    <div class="J_adv" data-view="true" data-mod="ad_popu_199" data-mtp="43" data-order="114" data-con="ad_content_1843" style="width: 960px; height: 90px;">
+                                             <script type="text/javascript">
+                                                 /*博客内容页下方Banner2-960*90，创建于,2016-11-28*/
+                                                 var cpro_id = "u2831143";
+                                            </script>
+                                            <script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+                                   </div>
+                    </div>
+    </div>  
+
+        <!-- 广告位开始 -->
+        <!-- 广告位结束 -->
+<div class="J_adv" data-view="true" data-mod="ad_popu_72" data-mtp="62" data-order="40" data-con="ad_content_2072">
+                 <script id="popuLayer_js_q" src="http://ads.csdn.net/js/popuLayer.js" defer="defer"  type="text/javascript"></script>
+            <div id="layerd" style="position: fixed;bottom:0px;right:0px;line-height:0px;z-index:1000">
+    	            <div class="J_close layer_close" style="display:;background-color:#efefef;padding:0px;color:#333;font:12px/24px Helvetica,Tahoma,Arial,sans-serif;text-align:right;">关闭</div><!-- 广告占位容器 --><div id="cpro_u2895327"></div></div>
+            <script>  document.getElementById("popuLayer_js_q").onload=function(){      var styObjd=styObj={width:"300px","height":parseInt(250)+28};window.CSDN.Layer.PopuLayer("#layerd",{storageName:"layerd",styleObj:styObjd,total:50,expoire:1000*60});  }</script><!-- 投放代码 --><script type="text/javascript">                /*服务器频道首页置顶Banner960*90，创建于2014-7-3*/    (window.cproArray = window.cproArray || []).push({        id: "u2895327"      });  </script>  <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+     
+</div>
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '47809295';
+    var commentscount = 14;
+    var islock = false
+</script>
+
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/u010687392/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){        
+        
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+    var articletitle='Android内存优化（使用SparseArray和ArrayMap代替HashMap）';
+
+</script>
+
+
+
+
+
+
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+               
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/u010687392" target="_blank">
+    <img src="http://avatar.csdn.net/6/E/C/1_u010687392.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/u010687392" class="user_name" target="_blank">u010687392</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=u010687392','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                       <div class="ico_expert"  onclick="javascript:location='http://blog.csdn.net/experts/rule.html'" title="CSDN认证专家" style="cursor:pointer;width:60px;height:60px;background:url('http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhuanjiamiddle.png') no-repeat" ></div>
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/zhuanlandaren.png" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="4" >
+                                            </a>
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="3" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>445305次</span></li>
+    <li>积分：<span>5660</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog6.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：5660 </div>
+        </span>  </li>
+    <li>排名：<span>第4064名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>130篇</span></li>
+    <li>转载：<span>10篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>340条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/best.html" target="_blank"><img src="http://img.blog.csdn.net/20160307154005978" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/best.html" target="_blank">Android性能优化</a>
+    <p>文章：15篇</p>
+    <span>阅读：125089</span>
+    </td>
+    </tr></table>
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/sunzxyongbest.html" target="_blank"><img src="http://img.blog.csdn.net/20151123180550052" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/sunzxyongbest.html" target="_blank">集：性能优化与代码简洁之道</a>
+    <p>文章：15篇</p>
+    <span>阅读：125089</span>
+    </td>
+    </tr></table>
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/sunzxyonggreendao.html" target="_blank"><img src="http://img.blog.csdn.net/20151123180548192" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/sunzxyonggreendao.html" target="_blank">Android数据存储之GreenDAO的使用</a>
+    <p>文章：5篇</p>
+    <span>阅读：14775</span>
+    </td>
+    </tr></table>
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/sunzxyongmaterial.html" target="_blank"><img src="http://img.blog.csdn.net/20151123180547817" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/sunzxyongmaterial.html" target="_blank">符合Material Design的设计小栈</a>
+    <p>文章：15篇</p>
+    <span>阅读：101302</span>
+    </td>
+    </tr></table>
+    </ul>
+</div>
+
+<div id="custom_column_40211529" class="panel">
+<ul class="panel_head"><span>关于我</span></ul>
+<ul class="panel_body">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=0&isWeibo=1&isFans=0&uid=3048730677&verifier=1a8431ad&dpc=1"></iframe>
+</ul>
+</div>
+
+<div id="custom_column_40054643" class="panel">
+<ul class="panel_head"><span>关于我</span></ul>
+<ul class="panel_body">
+
+<a href="https://github.com/Sunzxyong">我的github</a>
+
+</ul>
+</div><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/u010687392/article/category/2776487" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android开发之路</a><span>(69)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/5691525" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">插件化开发与项目架构</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/5625281" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android 5.x Material Design 使用</a><span>(15)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/3197917" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android性能优化</a><span>(16)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/6098772" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android最佳实践</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/5729667" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android网络框架</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/5814725" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android数据库与数据存储最佳实践</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/2776485" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java学习之路</a><span>(20)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/5798433" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Kotlin for Android</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/3272427" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">算法</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/3272435" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">设计模式</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/u010687392/article/category/2886655" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">网络协议解析</a><span>(5)</span>
+                </li>
+</ul>
+</div><div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/u010687392/article/details/46906657" title="Material Design之CollapsingToolbarLayout使用">Material Design之CollapsingToolbarLayout使用</a><span>(29549)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/47809295" title="Android内存优化（使用SparseArray和ArrayMap代替HashMap）">Android内存优化（使用SparseArray和ArrayMap代替HashMap）</a><span>(27094)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/49850803" title="Android性能优化之使用线程池处理异步任务">Android性能优化之使用线程池处理异步任务</a><span>(22047)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/46852565" title="Material Design之CoordinatorLayout+AppBarLayout实现上滑隐藏ToolBar">Material Design之CoordinatorLayout+AppBarLayout实现上滑隐藏ToolBar</a><span>(17219)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/50035061" title="Android性能优化之被忽视的优化点">Android性能优化之被忽视的优化点</a><span>(16064)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/49909477" title="Android性能优化之常见的内存泄漏">Android性能优化之常见的内存泄漏</a><span>(14573)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/46954213" title="Material Design之FloatingActionButton的使用">Material Design之FloatingActionButton的使用</a><span>(12285)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/50518343" title="Android性能优化之加快应用启动速度">Android性能优化之加快应用启动速度</a><span>(8656)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/48005545" title="RecyclerView添加Header和Footer">RecyclerView添加Header和Footer</a><span>(8441)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/47950199" title="Android实现RecyclerView侧滑删除和长按拖拽-ItemTouchHelper">Android实现RecyclerView侧滑删除和长按拖拽-ItemTouchHelper</a><span>(8282)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/u010687392/article/details/49909477" title="Android性能优化之常见的内存泄漏">Android性能优化之常见的内存泄漏</a><span>(32)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/49850803" title="Android性能优化之使用线程池处理异步任务">Android性能优化之使用线程池处理异步任务</a><span>(30)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/50035061" title="Android性能优化之被忽视的优化点">Android性能优化之被忽视的优化点</a><span>(19)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/46906657" title="Material Design之CollapsingToolbarLayout使用">Material Design之CollapsingToolbarLayout使用</a><span>(18)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/50525697" title="Android性能优化之Splash页应该这样设计">Android性能优化之Splash页应该这样设计</a><span>(17)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/46852565" title="Material Design之CoordinatorLayout+AppBarLayout实现上滑隐藏ToolBar">Material Design之CoordinatorLayout+AppBarLayout实现上滑隐藏ToolBar</a><span>(17)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/47121729" title="插件化开发—动态加载技术加载已安装和未安装的apk">插件化开发—动态加载技术加载已安装和未安装的apk</a><span>(16)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/47809295" title="Android内存优化（使用SparseArray和ArrayMap代替HashMap）">Android内存优化（使用SparseArray和ArrayMap代替HashMap）</a><span>(14)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/49719283" title="我的第二个独立开发的邮箱类App—“简邮”（支持QQ、雅虎、阿里云、Outlook）">我的第二个独立开发的邮箱类App—“简邮”（支持QQ、雅虎、阿里云、Outlook）</a><span>(14)</span>
+</li>
+<li>
+<a href="/u010687392/article/details/50266633" title="Fresco图片框架内部实现原理探索">Fresco图片框架内部实现原理探索</a><span>(12)</span>
+</li>
+</ul>
+</div>
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/u010687392/article/details/47809295#comments">Android内存优化（使用SparseArray和ArrayMap代替HashMap）</a>
+    <p style="margin:0px;"><a href="/guozhaohui628" class="user_name">guozhaohui628</a>:
+#如果有多个元素key的hash值相同的话，后一个元素并不会覆盖上一个元素，而是采取链表的方式，把之...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/47809295#comments">Android内存优化（使用SparseArray和ArrayMap代替HashMap）</a>
+    <p style="margin:0px;"><a href="/gc_gongchao" class="user_name">gc_gongchao</a>:
+@yy_451686712:这篇文章还没看，看文章一般先看评论，不过我觉得你说的hashmap的时间...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/46852565#comments">Material Design之CoordinatorLayout+AppBarLayout实现上滑隐藏ToolBar</a>
+    <p style="margin:0px;"><a href="/u011155781" class="user_name">u011155781</a>:
+请问我里写得有问题吗？感觉跟博主的差不多吧，为什么toobar没有滚动呢
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/46906657#comments">Material Design之CollapsingToolbarLayout使用</a>
+    <p style="margin:0px;"><a href="/qq_35194778" class="user_name">qq_35194778</a>:
+赞!
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/50684754#comments">Android最佳实践之SystemBar状态栏全版本适配方案</a>
+    <p style="margin:0px;"><a href="/Xiaohui783" class="user_name">Xiaohui783</a>:
+楼主，你这里的Toolbar  如何渐变的
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/48496299#comments">ORM对象关系映射之GreenDAO建立多表关联</a>
+    <p style="margin:0px;"><a href="/qq_21220745" class="user_name">qq_21220745</a>:
+博主，我一对多查询的时候，一直报异常，显示daoSession=null;这怎么解决
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/47950199#comments">Android实现RecyclerView侧滑删除和长按拖拽-ItemTouchHelper</a>
+    <p style="margin:0px;"><a href="/xsc992926" class="user_name">xsc992926</a>:
+试过了，挺好的，感谢楼主，不过在移动的地方，Collections.swap(datas, from...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/46756739#comments">RecyclerView实现瀑布流效果（二）</a>
+    <p style="margin:0px;"><a href="/u013707383" class="user_name">u013707383</a>:
+没看到你的加载更多在哪？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/50525697#comments">Android性能优化之Splash页应该这样设计</a>
+    <p style="margin:0px;"><a href="/qq_21223763" class="user_name">qq_21223763</a>:
+又发现一个问题，这种启动splash启动的方式会有白屏的情况，从效果图中也能看出来。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/u010687392/article/details/49850803#comments">Android性能优化之使用线程池处理异步任务</a>
+    <p style="margin:0px;"><a href="/BuChangRong" class="user_name">BuChangRong</a>:
+真心为最后一段关系AsyncTask的内容点赞，关于具体的分析，可以参考：http://blog.c...
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+
+
+                 <!-- 广告位开始 --> 
+                <!-- 广告位结束 -->
+                   <div class="J_adv" data-view="true" data-mod="ad_popu_189" data-mtp="63" data-order="40" data-con="ad_content_1259" style="width: 250px; height: 250px;">
+                        <div id="nav_show_top_stop" style="width: 250px;height: 250px;z-index:1000"><div id="cpro_u2734133"></div></div>
+                   </div>
+                    <script>    
+                        
+                        setTimeout(function () {
+                            var naviga_offsetTop = 0; function naviga_stay_top() {
+                                var scrollTop = jQuery(document).scrollTop();
+                                if (scrollTop > naviga_offsetTop) {
+                                    jQuery("#nav_show_top_stop").css({ "position": "fixed" });
+                                    jQuery("#nav_show_top_stop").css({ "top": "0px" });
+                                } else { jQuery("#nav_show_top_stop").css({ "position": "fixed" }); jQuery("#nav_show_top_stop").css({ "top": naviga_offsetTop - scrollTop + "px" }); }
+                            }
+                            function onload_function() {
+                                naviga_offsetTop = jQuery("#nav_show_top_stop").position().top;
+                                jQuery(window).bind("scroll", naviga_stay_top); jQuery(window).bind("mousewheel", naviga_stay_top);
+                                jQuery(document).bind("scroll", naviga_stay_top); jQuery(document).bind("mousewheel", naviga_stay_top);
+                            } jQuery(document).ready(onload_function);
+                        },200);                                   
+
+                    </script>
+                    <script type="text/javascript">    (window.cproArray = window.cproArray || []).push({ id: "u2734133" });  </script>
+                   <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+           </div>   
+
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=4899175"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+
+    </div>
+      <!--new top-->
+    
+
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+   
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+
+   
+
+
+        <script type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>   
+         <script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+        <script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+        <link rel="stylesheet" href="http://static.blog.csdn.net/code/prettify.css" />
+        <script type="text/javascript" src="http://static.blog.csdn.net/code/prettify.js"></script>
+        <script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                setTimeout(function () {
+                    var searchtitletags = articletitle + ',' + $("#tags").html();
+                    searchService({
+                        index: 'blog',
+                        query: searchtitletags,
+                        from: 5,
+                        size: 5,
+                        appendTo: '#res',
+                        url: 'recommend',
+                        his: 2,
+                        client: "blog_cf_enhance",
+                        tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+                    });
+                }, 1000);
+            });
+
+         </script>   
+        <script type="text/javascript" src="http://static.blog.csdn.net/scripts/web-storage-cache.min.js"></script>
+        <script type="text/javascript" src="http://static.blog.csdn.net/scripts/replace.min.js"></script>
+    
+
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+    <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_code.css" />
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/saveToCode.js"></script>
+      <script type="text/javascript" src="//csdnimg.cn/rabbit/tracking-ad/main.js?75eacd8"></script>
+
+    <link rel="stylesheet" href="http://static.blog.csdn.net/css/fa.css" />
+          
+    <div class="pop_CA_cover"  style="display:none"></div>
+    <div class="pop pop_CA"  style="display:none">
+          <div class="CA_header">
+            收藏助手
+            <span class="cancel_icon"  id="fapancle"  onclick="$('.pop_CA').hide();$('.pop_CA_cover').hide();"></span>
+          </div>
+          <iframe src="" id="fa" frameborder="0" width="100%" height="360"  scrolling="no" ></iframe>
+    </div>
+
+</body>
+</html>   
+ 

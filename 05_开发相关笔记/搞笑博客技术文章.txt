@@ -1,1 +1,0 @@
- 一个小菜鸟的Android Studio2.3升级之旅，附赠升级之后Gradle的配置方法 http://blog.csdn.net/hylczp/article/details/60137958

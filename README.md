@@ -6,3 +6,5 @@
 Github单个仓库1GB，单个文件最大100M
 
 使用Git提交时，只需要根据提示输入用户名和密码即可。用户名即为Github的登录邮箱或者用户名，密码为Github的登录密码，每次提交时都需要输入用户名和密码，或可查看此文章进行配置免输入：http://blog.csdn.net/android_cai_niao/article/details/43883221
+
+不论什么语言，要搜索相关的资源，可在Github上搜索awesome-xxx，如awesome-android，资源多如满天细雨纷飞眼花缭乱急死处女座！！！

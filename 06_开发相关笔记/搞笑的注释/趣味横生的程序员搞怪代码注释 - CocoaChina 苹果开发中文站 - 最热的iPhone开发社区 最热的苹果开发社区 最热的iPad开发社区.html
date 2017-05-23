@@ -1,0 +1,664 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://www.cocoachina.com/programmer/20131205/7478.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>趣味横生的程序员搞怪代码注释 -  CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区</title>
+	<meta name="keywords" content="程序员iPhone开发,iOS开发,iPad开发,Mac开发,苹果开发中文站,iPhone开发中文站,CocoaChina首页, Mac OS开发, Cocoa介绍,移动互联网,触控科技,Cocoa,Apple,developer,iOS,iPhone,iPad,iMac,iPod Touch,iPhone5,iPhone4S,iPad3,招聘,iPhone程序员,Objective-c,iPhone应用外包,ios6,ios面试,Cocos2d-x,cocos2d,iTunes,App Store,苹果开发">
+	<meta name="description" content="相信每一个编程极客都知道什么是注释，也都知道如何在代码中添加注释，今天这篇文章中，我们将不会讨论如何添加注释，或者如何添加一个完美的注释，在今天的文章里，我们将给大家奉献 - CocoaChina 开发讨论区 最热的iOS开发论坛| 最热的Mac开发论坛 | 最热的iPhone开发论坛 | 最热的iPad开发论坛">
+    <meta name="baidu-tc-cerfication" content="3300a939a1098c27e94457b75a0bb8c1">
+   	<link href="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/style-min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" async="" charset="utf-8" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/core.php"></script><script type="text/javascript" async="" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/ga.js"></script><script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0 - CocoaChina全站" href="http://www.cocoachina.com/cms/rss.php">
+	<script language="javascript" type="text/javascript" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/dedeajax2-min.js"></script>
+	<script type="text/javascript" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/abase.js"></script><script type="text/javascript" charset="gbk" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/prebat.php"></script>
+<script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/share.js"></script><script type="text/javascript" async="" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/embed.js" charset="UTF-8"></script><script type="text/javascript" async="" charset="utf-8" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/pingguokaifazwz.js"></script><link href="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/pingguokaifazwz_style.css" rel="stylesheet" type="text/css"><script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/bcore.min.js" type="text/javascript"></script><link rel="stylesheet" href="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/share_style0_32.css"><link rel="stylesheet" href="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/slide_share.css"><link type="text/css" rel="stylesheet" href="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/embed.default.css"></head>
+<body class="narrow">
+<div class="top">
+	<div id="topshow" class="t-wrap"></div>
+</div>
+
+<div class="header">
+	<div class="h-wrap">
+    	<div class="h-logo">
+        	<a href="http://www.cocoachina.com/" class="logo"></a>
+            
+            <div class="cc-ad1" style="padding-top:10px;padding-right:5px;">
+            	<script>CNZZ_SLOT_RENDER('294790');</script><script type="text/javascript" charset="gbk" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/appgcm.php"></script>
+            </div>
+        </div>
+        
+        <div class="h-nav">
+        	<div class="h-navr">
+            	<div class="h-navl">
+                	<ul id="nav-lv0" class="hn-lv1 clearfix">
+                    	<li class="first"><a data-lv="1-1" href="http://www.cocoachina.com/" class="cur">首页</a></li>
+                        <li><a data-lv="1-2" href="http://www.cocoachina.com/newbie/">新手</a></li>
+                        <li><a data-lv="1-3" href="http://www.cocoachina.com/ask" target="_blank">问答</a></li>
+                        <li><a data-lv="1-4" href="http://www.cocoachina.com/bbs" target="_blank">论坛</a></li>
+                        <li><a data-lv="1-5" href="http://www.cocoachina.com/bbs/thread.php?fid=41" target="_blank">Cocos2d-x</a></li>
+                        <li><a data-lv="1-6" href="http://d.cocoachina.com/" target="_blank">开发者中心</a></li>
+                    </ul>
+                    <div id="nav-box0" class="hn-lv2">
+                    	<ul class="ul1 clearfix" style="display:block">
+                            <li><a data-lv="1-1-8" href="http://www.cocoachina.com/special/index.html" target="_blank"><span>专题</span></a></li>
+                           
+                            <li><a data-lv="1-1-10" href="http://www.cocoachina.com/calendar/" target="_blank"><span>新闻日历</span></a></li>
+                        </ul>
+                        <ul class="ul1 clearfix">
+                        	<li><a data-lv="1-1-1" href="http://www.cocoachina.com/ios/" target="_blank"><span>iOS开发</span></a></li>
+                            <li><a data-lv="1-1-2" href="http://www.cocoachina.com/game/"><span>游戏开发</span></a></li>
+                            <li><a data-lv="1-1-3" href="http://www.cocoachina.com/swift/"><span>Swift</span></a></li>
+                            <li><a data-lv="1-1-4" href="http://www.cocoachina.com/apple/"><span>苹果相关</span></a></li>
+                            <li><a data-lv="1-1-5" href="http://www.cocoachina.com/appstore/"><span>App Store研究</span></a></li>
+                            <li><a data-lv="1-1-6" href="http://www.cocoachina.com/cocos/"><span>Cocos引擎</span></a></li>
+                            <li><a data-lv="1-1-7" href="http://www.cocoachina.com/market/"><span>营销推广</span></a></li>
+                            <li><a data-lv="1-1-8" href="http://www.cocoachina.com/industry/" target="_blank"><span>业界动态</span></a></li>
+                        </ul>
+                        <ul class="ul1 clearfix">
+                        	<li><a data-lv="1-3-1" href="http://www.cocoachina.com/ask/questions" target="_blank"><span>最新问题</span></a></li>
+                            <li><a data-lv="1-3-2" href="http://www.cocoachina.com/ask/questions/index/all?tab=hot" target="_blank"><span>热门问题</span></a></li>
+                            <li><a data-lv="1-3-3" href="http://www.cocoachina.com/ask/users" target="_blank"><span>用户</span></a></li>
+                            <li><a data-lv="1-3-4" href="http://www.cocoachina.com/ask/questions/index/unanswered" target="_blank"><span>未解答提问</span></a></li>
+                            <li><a data-lv="1-3-5" href="http://www.cocoachina.com/ask/questions/ask" target="_blank"><span>我要提问</span></a></li>
+                        </ul>
+                        <ul class="ul1 clearfix">
+                        	<li><a data-lv="1-4-1" href="http://www.cocoachina.com/bbs/thread.php?fid-2.html"><span>OS X开发</span></a></li>
+							<li><a data-lv="1-4-1" href="http://www.cocoachina.com/bbs/thread.php?fid-57.html"><span>Swift专区</span></a></li>
+                            <li><a data-lv="1-4-2" href="http://www.cocoachina.com/bbs/thread.php?fid-21.html"><span>iOS开发</span></a></li>
+                            <li><a data-lv="1-4-3" href="http://www.cocoachina.com/bbs/thread.php?fid-14.html"><span>App Store经验交流</span></a></li>
+                            <li><a data-lv="1-4-4" href="http://www.cocoachina.com/bbs/thread.php?fid-23.html"><span>美术区</span></a></li>
+                            <li><a data-lv="1-4-5" href="http://www.cocoachina.com/bbs/thread.php?fid=18"><span>游戏开发区</span></a></li>
+                            <li><a data-lv="1-4-6" href="http://www.cocoachina.com/bbs/thread.php?fid-5.html"><span>议事大厅</span></a></li>
+                            <li><a data-lv="1-4-7" href="http://www.cocoachina.com/bbs/thread.php?fid-26.html"><span>招聘外包区</span></a></li>
+                        </ul>
+						<ul class="ul1 clearfix">
+							<li></li>
+                        </ul>
+                        <ul class="ul1 clearfix">
+                        	<li><a data-lv="1-6-1" href="http://code.cocoachina.com/" target="_blank"><span>代码库</span></a></li>
+                            <li><a data-lv="1-6-2" href="http://d.cocoachina.com/job/job_list/" target="_blank"><span>招聘</span></a></li>
+                            <li><a data-lv="1-6-3" href="http://d.cocoachina.com/task/lists/" target="_blank"><span>外包</span></a></li>
+                            <li><a data-lv="1-6-4" href="http://d.cocoachina.com/brand/" target="_blank"><span>App Store应用排行</span></a></li>
+                            <li><a data-lv="1-6-5" href="http://d.cocoachina.com/promocode/" target="_blank"><span>发码</span></a></li>
+                            <li><a data-lv="1-6-6" href="http://d.cocoachina.com/signature/" target="_blank"><span>签名</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="search" style="">
+                    	<form id="searchform" action="http://www.cocoachina.com/cms/plus/search.php" name="formsearch" method="post" target="_blank">
+                            <input type="hidden" name="kwtype" value="0">
+    						<input type="hidden" name="searchtype" value="titlekeyword">
+                            <input name="keyword" type="text" value="站内搜索" style="width:190px;padding:5px;height:26px" onclick="this.select()"><input type="image" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/searchbtn.png" data-lv="1-7">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="middle" style="">
+	<div class="m-wrap">
+<script language="javascript">
+    function IsPC() { 
+		var userAgentInfo = navigator.userAgent; 
+		var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"); 
+		var flag = true; 
+		for (var v = 0; v < Agents.length; v++) { 
+		if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; } 
+		} 
+		return flag; 
+	}
+    if (!IsPC()){
+           window.location.href = "http://www.cocoachina.com/cms/wap.php?action=article&id=7478"; 
+    }
+</script>
+        <div class="m-cols clearfix">
+        	<div class="m-rcol fr">
+            	<div class="mr-fast">
+                	<h2>开发者通道</h2>
+                    <ul class="clearfix">
+                    	<li><a href="http://brand.cocoachina.com/" target="_blank"><span class="rf1">排行榜</span></a></li>
+                        <li><a href="http://d.cocoachina.com/code/" target="_blank"><span class="rf2">代码库</span></a></li>
+                        <li class="rlast"><a href="http://d.cocoachina.com/books/" target="_blank"><span class="rf3">图书库</span></a></li>
+                        <li><a href="http://d.cocoachina.com/sites/" target="_blank"><span class="rf4">网站库</span></a></li>
+                        <li><a href="http://d.cocoachina.com/promocode/" target="_blank"><span class="rf5">发码区</span></a></li>
+                        <li class="rlast"><a href="http://d.cocoachina.com/tools/" target="_blank"><span class="rf6">工具库</span></a></li>
+                        <li><a href="http://d.cocoachina.com/job" target="_blank"><span class="rf7">招聘区</span></a></li>
+                        <li><a href="http://d.cocoachina.com/task/lists" target="_blank"><span class="rf8">外包区</span></a></li>
+                        <li class="rlast"><a href="http://ask.cocoachina.com/" target="_blank"><span class="rf9">问答区</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="mr-ads">
+                	<h2>关注CocoaChina</h2>
+                    <div class="clearfix mr-cont">
+                    	<p class="fl">
+                        	<img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/cocoachina-weixin-100.jpg" width="100" height="100" alt="关注CocoaChina微信 获取每日文章推荐" data-bd-imgshare-binded="1"><br>
+                            关注微信
+                        </p>
+                        <p class="fl">
+                        	<img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/cocoachina-mobile-100.jpg" width="100" height="100" alt="扫一扫 浏览CocoaChina移动版" data-bd-imgshare-binded="1"><br>
+                            移动版
+                        </p>
+                    </div>
+              	</div>
+                <div class="mr-ads-btm"></div>
+                
+                <div class="mr-rpo">
+                	<ul class="mrpo-nav clearfix">
+                    	<li class="first cur"><a>最近更新</a></li>
+                        <li class="last cur"><div></div></li>
+                    </ul>
+                    <div class="mrpo-list">
+                    	<ul>
+                        	<li class="first">
+                            	<div class="col1">1</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140826/9459.html" class="mrpol-ttl" title="程序员生存定律-打造属于自己的稀缺性">程序员生存定律-打造属于自己的稀缺性</a>
+                          			<p>2014-08-26</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">2</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140825/9451.html" class="mrpol-ttl" title="6个设计错误将杀死你的app">6个设计错误将杀死你的app</a>
+                          			<p>2014-08-25</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">3</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140825/9445.html" class="mrpol-ttl" title="程序员常去的14个顶级开发社区">程序员常去的14个顶级开发社区</a>
+                          			<p>2014-08-25</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">4</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140823/9443.html" class="mrpol-ttl" title="一周文章回顾（8.23）">一周文章回顾（8.23）</a>
+                          			<p>2014-08-23</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">5</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140823/9440.html" class="mrpol-ttl" title="关于汉堡包图标的A/B测试">关于汉堡包图标的A/B测试</a>
+                          			<p>2014-08-23</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">6</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140822/9434.html" class="mrpol-ttl" title="和孩子们一起做手游的经历">和孩子们一起做手游的经历</a>
+                          			<p>2014-08-22</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">7</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140821/9431.html" class="mrpol-ttl" title="视频:2014年8月2号CocoaChina开发者沙龙（上海站）嘉宾演讲精彩放送">视频:2014年8月2号CocoaChina开发者沙龙（上海站）嘉宾演讲精彩放送</a>
+                          			<p>2014-08-21</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">8</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140821/9430.html" class="mrpol-ttl" title="Uber面向第三方App开放API，拓展更多使用场景">Uber面向第三方App开放API，拓展更多使用场景</a>
+                          			<p>2014-08-21</p>
+                               	</div>
+                            </li>
+<li>
+                            	<div class="col1">9</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140821/9428.html" class="mrpol-ttl" title="什么促使我走上独立开发者之路">什么促使我走上独立开发者之路</a>
+                          			<p>2014-08-21</p>
+                               	</div>
+                            </li>
+<li class="last">
+                            	<div class="col1">10</div>
+                            	<div>
+                                	<a href="http://www.cocoachina.com/programmer/20140821/9427.html" class="mrpol-ttl" title="以互联网思维做好客户端软件">以互联网思维做好客户端软件</a>
+                          			<p>2014-08-21</p>
+                               	</div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="mrpo-btm"></div>
+                </div>
+                
+                
+                <div class="mr-app mr-cca">
+                	<div class="mr-app2">
+                    	<div class="mr-app3">
+                        	<ul id="nav-lv1" class="mra-nav clearfix">
+                            	<li class="first cur"><a>推荐内容</a></li>
+                                <li class="last"><a>热点内容</a></li>
+                            </ul>
+                            <div id="nav-lv2" class="mra-list mra-list1">
+                            	<ul style="display:block">
+                                	<li class="first">
+                                    	<a href="http://www.cocoachina.com/programmer/20140825/9445.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-140R50926440-L.png" alt="程序员常去的14个顶级开发社区" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140825/9445.html" class="col5">程序员常去的14个顶级开发社区</a>
+                                    </li>
+<li>
+                                    	<a href="http://www.cocoachina.com/programmer/20140821/9431.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-140R11355290-L.png" alt="视频:2014年8月2号CocoaChina开发者沙龙（上海站）嘉宾演讲精彩放送" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140821/9431.html" class="col5">视频:2014年8月2号CocoaChina开发者沙龙（上海站）嘉宾演讲精彩放送</a>
+                                    </li>
+<li>
+                                    	<a href="http://www.cocoachina.com/programmer/20140820/9419.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-140R01021490-L.png" alt="如果程序员是猫，你是哪只猫？" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140820/9419.html" class="col5">如果程序员是猫，你是哪只猫？</a>
+                                    </li>
+<li>
+                                    	<a href="http://www.cocoachina.com/programmer/20140813/9376.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-140Q3162645T8.png" alt="《捕鱼达人 3》主程洪志雄专访：如何使用Cocos2d-x完美呈现捕鱼3" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140813/9376.html" class="col5">《捕鱼达人 3》主程洪志雄专访：如何使用Cocos2d-x完美呈现捕鱼3</a>
+                                    </li>
+<li class="last">
+                                    	<a href="http://www.cocoachina.com/programmer/20140811/9354.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-140Q1152605160.jpg" alt="程序员生存定律--成长路上常见的坑" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140811/9354.html" class="col5">程序员生存定律--成长路上常见的坑</a>
+                                    </li>
+
+                                </ul>
+                                
+                                <ul style="display:none">
+                                	<li class="first">
+                                    	<a href="http://www.cocoachina.com/programmer/20101022/2229.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/8-1010221HP80-L.jpg" alt="GameCenter 使用指南" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20101022/2229.html" class="col5">GameCenter 使用指南</a>
+                                    </li>
+<li>
+                                    	<a href="http://www.cocoachina.com/programmer/20120525/4295.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/101U52602-0-lp.jpg" alt="地球人己阻止不了程序猿们学习cocos2d-x了 (第一篇" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20120525/4295.html" class="col5">地球人己阻止不了程序猿们学习cocos2d-x了 (第一篇</a>
+                                    </li>
+<li>
+                                    	<a href="http://www.cocoachina.com/programmer/20140401/8076.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-1404011150553I.jpg" alt="工作十年的他，为何只拿毕业三年的工资" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140401/8076.html" class="col5">工作十年的他，为何只拿毕业三年的工资</a>
+                                    </li>
+<li>
+                                    	<a href="http://www.cocoachina.com/programmer/20120409/4129.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4064-1204091444180-L.jpg" alt="In-App Purchases入门" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20120409/4129.html" class="col5">In-App Purchases入门</a>
+                                    </li>
+<li class="last">
+                                    	<a href="http://www.cocoachina.com/programmer/20140404/8102.html" class="col4"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196-140404105H70-L.jpg" alt="如果40岁了还在写代码，是一种幸福，还是一种悲哀？" data-bd-imgshare-binded="1"></a>
+                                        <a href="http://www.cocoachina.com/programmer/20140404/8102.html" class="col5">如果40岁了还在写代码，是一种幸福，还是一种悲哀？</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> <!--right column-->
+        
+        
+        	<div class="mlist">
+            	<div class="cornertm">
+                	<div class="cornertl">
+                    	<div class="cornertr" id="channelinfos">
+                        	<a href="http://www.cocoachina.com/">主页</a><span> &gt; </span><a href="http://www.cocoachina.com/programmer/">程序人生</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+ 
+                	
+                	<h2 class="arcd-ttl">趣味横生的程序员搞怪代码注释</h2>
+		
+                    <p class="arcd-info"><span>发布于：2013-12-05 10:00</span><span>阅读数：<script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/count.php" type="text/javascript" language="javascript"></script>14313</span>          	
+					</p>
+                    <div class="arcd-sum">
+                    	<p class="p1">相信每一个编程极客都知道什么是注释，也都知道如何在代码中添加注释，今天这篇文章中，我们将不会讨论如何添加注释，或者如何添加一个完美的注释，在今天的文章里，我们将给大家奉献</p>
+                        
+                        <span class="pun pun1">“</span><span class="pun pun2">”</span>
+                    </div>
+                </div>
+            	<div class="cornerbm c10"><div class="cornerbl c11"><div class="cornerbr c12"></div></div></div>
+            
+            	<div class="detail">
+            		<div class="tags">
+                    	<a href="javascript:void(0)" onclick="ts(&#39;article&#39;,1)" class="font f1"></a>
+                    	<a href="javascript:void(0)" onclick="ts(&#39;article&#39;,-1)" class="font f2"></a>
+                    	<a id="read" href="javascript:void(0);" class="font f3">阅读器</a>
+                        
+                    	<p style="min-height:35px"><a href="http://www.cocoachina.com/cms/tags.php?/%E7%A8%8B%E5%BA%8F%E5%91%98/" target="_blank">程序员</a></p>
+
+                    </div>
+                    
+                    <div class="dtl-arc">
+                    	<div class="dtl-txt">
+                    		<div id="article">
+							
+							<div style="text-align: center;"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/4196_131205101348_1.jpg" width="500" border="0" height="233" alt="" style="cursor:pointer" onclick="window.open(&#39;/cms/uploads/allimg/131205/4196_131205101348_1.jpg&#39;)" data-bd-imgshare-binded="1"></div>
+<div>相信每一个编程极客都知道什么是注释，也都知道如何在代码中添加注释，今天这篇文章中，我们将不会讨论如何添加注释，或者如何添加一个完美的注释，在今天的文章里，我们将给大家奉献一场来自全球开发人员的注释盛宴，看看大家是怎么在代码中添加自己富有想象力的注释吧，绝对会让你乐此不彼！</div>
+<div>&nbsp;</div>
+<div>当然，如果你也有很多超有趣的注释，请留言和我们分享！我们的口号是：“快乐编程，娱乐注释” ！！！</div>
+<div>&nbsp;</div>
+<div><strong>注重语法的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="keyword">return</span><span>&nbsp;1;&nbsp;#&nbsp;returns&nbsp;1&nbsp;&nbsp;</span></span></li></ol></pre>
+<div>&nbsp;</div>
+<div><strong>来自绝对菜鸟的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">//&nbsp;I&nbsp;am&nbsp;not&nbsp;sure&nbsp;if&nbsp;we&nbsp;need&nbsp;this,&nbsp;but&nbsp;too&nbsp;scared&nbsp;to&nbsp;delete.</span><span>&nbsp;</span></span></li><li><span>...&nbsp;&nbsp;</span></li><li class="alt"><span>...&nbsp;</span></li></ol>
+中文：个人不确认是不是需要，但是实在不敢删除</pre>
+<div>&nbsp;</div>
+<div><strong>来自正直程序员的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">//&nbsp;I&nbsp;am&nbsp;not&nbsp;responsible&nbsp;of&nbsp;this&nbsp;code.</span><span>&nbsp;</span></span></li><li><span><span class="comment">//&nbsp;They&nbsp;made&nbsp;me&nbsp;write&nbsp;it,&nbsp;against&nbsp;my&nbsp;will.</span><span>&nbsp;</span></span></li></ol>
+中文：个人不负责这块的质量，因为他们逼迫我违心的写了这段代码</pre>
+<div>&nbsp;</div>
+<div><strong>来自电影的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span>options.BatchSize&nbsp;=&nbsp;300;&nbsp;</span><span class="comment">//Madness?&nbsp;THIS&nbsp;IS&nbsp;SPARTA!</span><span>&nbsp;</span></span></li></ol>
+中文：疯了吧？这是斯巴达！</pre>
+<div>&nbsp;</div>
+<div><strong>绝对尽责的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span>i++;&nbsp;</span><span class="comment">//&nbsp;increase&nbsp;i&nbsp;by&nbsp;1</span><span>&nbsp;</span></span></li></ol>
+中文：给变量i增加一个记数</pre>
+<div>&nbsp;</div>
+<div><strong>绝对会被忽略的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span>Catch&nbsp;(Exception&nbsp;e)&nbsp;{&nbsp;</span></span></li><li><span>&nbsp;<span class="comment">//who&nbsp;cares?</span><span>&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol>
+中文：谁在意？</pre>
+<div>&nbsp;</div>
+<div><strong>绝对不能信任注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">/**</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;*&nbsp;Always&nbsp;returns&nbsp;true.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*/</span><span>&nbsp;</span></span></li><li><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">boolean</span><span>&nbsp;isAvailable()&nbsp;{&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">false</span><span>;&nbsp;</span></span></li><li><span>}&nbsp;</span></li></ol>
+中文：返回为true （编辑：永远不能相信注释）</pre>
+<div>&nbsp;</div>
+<div><strong>典型的遗留系统代码里的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">/*</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;*&nbsp;You&nbsp;may&nbsp;think&nbsp;you&nbsp;know&nbsp;what&nbsp;the&nbsp;following&nbsp;code&nbsp;does.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;But&nbsp;you&nbsp;dont.&nbsp;Trust&nbsp;me.</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;*&nbsp;Fiddle&nbsp;with&nbsp;it,&nbsp;and&nbsp;youll&nbsp;spend&nbsp;many&nbsp;a&nbsp;sleepless</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;night&nbsp;cursing&nbsp;the&nbsp;moment&nbsp;you&nbsp;thought&nbsp;youd&nbsp;be&nbsp;clever</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;*&nbsp;enough&nbsp;to&nbsp;"optimize"&nbsp;the&nbsp;code&nbsp;below.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;Now&nbsp;close&nbsp;this&nbsp;file&nbsp;and&nbsp;go&nbsp;play&nbsp;with&nbsp;something&nbsp;else.</span>&nbsp;</span></li><li><span><span class="comment">&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li></ol>
+中文：你可能相信你能看懂以下代码，但是其实绝对不可能，相信我。一旦你调试了，你绝对会后悔装聪明去尝试优化这段代码。最好的方式是关闭文件，去玩点儿你喜欢的东西吧。</pre>
+<div>&nbsp;</div>
+<div><strong>Java程序里经常能看到的“典型”注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="keyword">try</span><span>&nbsp;{&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;<span class="keyword">finally</span><span>&nbsp;{&nbsp;</span><span class="comment">//&nbsp;should&nbsp;never&nbsp;happen&nbsp;</span><span>&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;</span></li></ol>
+中文：绝对不会运行到这里</pre>
+<div>&nbsp;</div>
+<div><strong>超级有自知之明的代码注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">//This&nbsp;code&nbsp;sucks,&nbsp;you&nbsp;know&nbsp;it&nbsp;and&nbsp;I&nbsp;know&nbsp;it.&nbsp;&nbsp;</span><span>&nbsp;</span></span></li><li><span><span class="comment">//Move&nbsp;on&nbsp;and&nbsp;call&nbsp;me&nbsp;an&nbsp;idiot&nbsp;later.</span><span>&nbsp;</span></span></li></ol>
+中文：这段代码的确很挫，我知道你也知道，先不要骂我2B了，请先继续往下看</pre>
+<div>&nbsp;</div>
+<div><strong>绝对有年头的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="keyword">long</span><span>&nbsp;</span><span class="keyword">long</span><span>&nbsp;ago;&nbsp;</span><span class="comment">/*&nbsp;in&nbsp;a&nbsp;galaxy&nbsp;far&nbsp;far&nbsp;away&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li></ol>
+中文：在很远很远的银河系外 （编辑：这段代码能运行，绝对是个奇迹）</pre>
+<div>&nbsp;</div>
+<div><strong>"情色"代码让我如何注释为好</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="keyword">double</span><span>&nbsp;penetration;&nbsp;</span><span class="comment">//&nbsp;ouch</span><span>&nbsp;</span></span></li></ol>
+中文：我擦！（编辑：如果你不熟悉英文，double penetration 绝对无法理解，但是如果你熟悉AV，了解情色，应该知道什么体位是“双管齐下”吧！ 嘿嘿，有点儿淘气了，请大家不要见怪）</pre>
+<div>&nbsp;</div>
+<div><strong>绝对无法挑剔的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">///////////////////////////////////////&nbsp;this&nbsp;is&nbsp;a&nbsp;well&nbsp;commented&nbsp;line</span><span>&nbsp;</span></span></li></ol>
+中文：这注释绝对完全没有问题</pre>
+<div>&nbsp;</div>
+<div><strong>保证正确体位的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">//&nbsp;I&nbsp;don't&nbsp;know&nbsp;why&nbsp;I&nbsp;need&nbsp;this,&nbsp;but&nbsp;it&nbsp;stops&nbsp;the&nbsp;people&nbsp;being&nbsp;upside-down</span><span>&nbsp;</span></span></li><li><span>x&nbsp;=&nbsp;-x;&nbsp;</span></li></ol>
+中文：我也不知道为什么需要这个，但是这个能保持大家不会倒立</pre>
+<div>&nbsp;</div>
+<div><strong>来自Java1.2 SwingUtilities的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span>doRun.run();&nbsp;&nbsp;</span><span class="comment">//&nbsp;...&nbsp;"a&nbsp;doo&nbsp;run&nbsp;run".</span><span>&nbsp;</span></span></li></ol></pre>
+<div><strong>最好的帮助你了解递归的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="preprocessor">#&nbsp;To&nbsp;understand&nbsp;recursion,&nbsp;see&nbsp;the&nbsp;bottom&nbsp;of&nbsp;this&nbsp;file&nbsp;</span><span>&nbsp;</span></span></li><li><span>&nbsp;&nbsp;</span></li><li class="alt"><span>At&nbsp;the&nbsp;bottom&nbsp;of&nbsp;the&nbsp;file:&nbsp;</span></li><li><span><span class="preprocessor">&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#&nbsp;To&nbsp;understand&nbsp;recursion,&nbsp;see&nbsp;the&nbsp;top&nbsp;of&nbsp;this&nbsp;file</span><span>&nbsp;</span></span></li></ol>
+中文：#如果想了解递归，请看最下面的注释...如果想了解递归，请看最上面的注释</pre>
+<div>&nbsp;</div>
+<div><strong>绝对督促你工作的注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">/*&nbsp;Please&nbsp;work&nbsp;*/</span><span>&nbsp;</span></span></li></ol></pre>
+<div><strong>绝对菜鸟注释</strong></div>
+<pre><ol class="dp-c"><li class="alt"><span><span class="comment">//I&nbsp;am&nbsp;not&nbsp;sure&nbsp;why&nbsp;this&nbsp;works&nbsp;but&nbsp;it&nbsp;fixes&nbsp;the&nbsp;problem.&nbsp;</span><span>&nbsp;</span></span></li></ol>
+中文：不知道为什么，但是的确解决了这个问题。</pre>
+<div>&nbsp;</div>
+<div>如果大家有兴趣继续欢乐的话，请径直前往StackOverflow阅读：你所遇到的最棒的注释，相信你会欢乐一天滴！</div>
+<div>&nbsp;</div>
+<div>来源：<a href="http://www.gbtags.com/gb/share/2461.htm" target="_blank">GBin1.com</a></div></div>
+                            
+                            <div style="border-top:1px solid #ccc;margin-top:30px;line-height:1.8;padding-top:10px">
+                            	<p>CocoaChina是全球最大的苹果开发中文社区，官方微信每日定时推送各种精彩的研发教程资源和工具，介绍app推广营销经验，最新企业招聘和外包信息，以及Cocos2d引擎、Cocos Studio开发工具包的最新动态及培训信息。关注微信可以第一时间了解最新产品和服务动态，微信在手，天下我有！</p>
+                                <p style="margin-top:15px">请搜索微信号“CocoaChina”关注我们！</p>
+                                <p style="text-align:center"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/cocoachina_weixin.jpg" width="444" height="120" alt="搜索CocoaChina微信公众号：CocoaChina" data-bd-imgshare-binded="1"></p>
+                            </div>
+                            
+                            <div class="arc-opt">
+                            	
+                                <div class="fl"><a class="praise store fl" href="javascript:void(0)" onclick="add_favors(7478,&#39;趣味横生的程序员搞怪代码注释&#39;)"></a></div><div id="newdigg" class="fl"><a href="javascript:void(0)" onclick="postDigg(&#39;good&#39;,7478)" class="praise fl" title="支持就要顶一下">(145)</a></div>
+								
+                          	</div>
+		<div class="clearfixed">
+        
+<div class="bdsharebuttonbox bdshare-button-style0-32" data-tag="share_1" data-bd-bind="1457970087361">
+	<a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a>
+</div>
+<script>
+	window._bd_share_config = {
+		common : {
+			bdText : '趣味横生的程序员搞怪代码注释 - 来自CocoaChina苹果开发中文站@CocoaChina ',	
+			bdDesc : "相信每一个编程极客都知道什么是注释，也都知道如何在代码中添加注释，今天这篇文章中，我们将不会讨论如何添加注释，或者如何添加一个完美的注释，在今天的文章里，我们将给大家奉献",	
+			bdUrl : "http://www.cocoachina.com/programmer/20131205/7478.html", 	
+			bdPic : 'http://www.cocoachina.com/cms/uploads/131205/4196-131205104I5356.png'
+		},
+		share : [{
+			"bdSize" : 32
+		}],
+		slide : [{	   
+			bdImg : 0,
+			bdPos : "right",
+			bdTop : 100
+		}],
+		image : [{
+			viewType : 'list',
+			viewPos : 'top',
+			viewColor : 'black',
+			viewSize : '24',
+			viewList : ['tsina','tqq','qzone','weixin','sqq']
+		}]
+	}
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+   </div>
+   
+   <!--bai fen dian-->
+   <div id="dt_Rec"></div>
+             <!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread" id="ds-thread"><div id="ds-reset"><div class="ds-meta" style="display: none;"><a href="javascript:void(0)" class="ds-like-thread-button ds-rounded"><span class="ds-icon ds-icon-heart"></span> <span class="ds-thread-like-text">喜欢</span><span class="ds-thread-cancel-like">取消喜欢</span></a><span class="ds-like-panel"></span></div><div class="ds-comments-info"><div class="ds-sort"><a class="ds-order-desc">最新</a><a class="ds-order-asc ds-current">最早</a><a class="ds-order-hot">最热</a></div><ul class="ds-comments-tabs"><li class="ds-tab"><a class="ds-comments-tab-duoshuo ds-current" href="javascript:void(0);">0条评论</a></li>  </ul></div><ul class="ds-comments"><li class="ds-post ds-post-placeholder">还没有评论，沙发等你来抢</li></ul><div class="ds-paginator" style="display: none;"><div class="ds-border"></div><a data-page="1" href="javascript:void(0);" class="ds-current">1</a></div><a name="respond"></a><div class="ds-login-buttons"><p>社交帐号登录:</p><div class="ds-social-links"><ul class="ds-service-list"><li><a href="http://cocoachina.duoshuo.com/login/weixin/" rel="nofollow" class="ds-service-link ds-weixin">微信</a></li><li><a href="http://cocoachina.duoshuo.com/login/weibo/" rel="nofollow" class="ds-service-link ds-weibo">微博</a></li><li><a href="http://cocoachina.duoshuo.com/login/qq/" rel="nofollow" class="ds-service-link ds-qq">QQ</a></li><li><a href="http://cocoachina.duoshuo.com/login/renren/" rel="nofollow" class="ds-service-link ds-renren">人人</a></li><li><a class="ds-more-services" href="javascript:void(0)">更多»</a></li></ul><ul class="ds-service-list ds-additional-services"><li><a href="http://cocoachina.duoshuo.com/login/douban/" rel="nofollow" class="ds-service-link ds-douban">豆瓣</a></li><li><a href="http://cocoachina.duoshuo.com/login/kaixin/" rel="nofollow" class="ds-service-link ds-kaixin">开心</a></li><li><a href="http://cocoachina.duoshuo.com/login/baidu/" rel="nofollow" class="ds-service-link ds-baidu">百度</a></li><li><a href="http://cocoachina.duoshuo.com/login/google/" rel="nofollow" class="ds-service-link ds-google">谷歌</a></li></ul></div></div><div class="ds-replybox"><a class="ds-avatar" href="javascript:void(0);" onclick="return false"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/noavatar_default.png" alt=""></a><form method="post"><input type="hidden" name="thread_id" value="1207805826530566367">
+<input type="hidden" name="parent_id" value="">
+<input type="hidden" name="nonce" value="56e6da1280c2b"><div class="ds-textarea-wrapper ds-rounded-top"><textarea name="message" title="Ctrl+Enter快捷提交" placeholder="说点什么吧…"></textarea><pre class="ds-hidden-text"></pre></div><div class="ds-post-toolbar"><div class="ds-post-options ds-gradient-bg"><span class="ds-sync"></span></div><button class="ds-post-button" type="submit">发布</button><div class="ds-toolbar-buttons"><a class="ds-toolbar-button ds-add-emote" title="插入表情"></a></div></div></form></div><p class="ds-powered-by"><a href="http://duoshuo.com/" target="_blank" rel="nofollow">www.cocoachina.com正在使用多说</a></p></div></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"cocoachina"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+                        </div>
+
+
+                    </div><!--detail-->
+                    
+                  
+
+
+            </div> <!--列表-->
+
+        </div>
+
+<div id="coco-store" style="display:none">
+	<div class="storebox">
+    	<h5>提示</h5>
+        <h3>已经收藏该篇文章</h3>
+        <p class="p1"><a href="http://www.cocoachina.com/bbs/u.php?action=favor&tag=1">去我的收藏夹</a></p>
+        <p class="p2"><a href="http://www.cocoachina.com/bbs/login.php">请登录</a></p>
+    </div>
+</div>        
+<script language="javascript" type="text/javascript" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/dedeajax2.js"></script>
+<script type="text/javascript">
+$(function() {
+	//getDigg(7478);
+})
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg'); 
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/cms/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/cms/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+</script>
+<script type="text/javascript">
+	
+	var _channels = [];
+	$(function() {
+		var _host = window.location.host;
+		var _tempi = 0;
+		$("#channelinfos a").each(function() {
+			if( _tempi > 0 ) {
+				var _tempa = [];
+				_tempa.push($(this).html()+"");
+				_tempa.push("http://"+_host+$(this).attr("href"));
+				_channels.push(_tempa);
+			}
+			_tempi++;
+		})
+	})
+
+	
+	window["_BFD"] = window["_BFD"] || {};
+	_BFD.BFD_INFO = {
+	
+	
+		"title":"趣味横生的程序员搞怪代码注释",   //文章标题
+	
+		"id":"7478",   //文章id
+	
+		"url":"http://www.cocoachina.com/programmer/20131205/7478.html",   //文章链接
+	
+		"category":_channels,   //文章类别
+	
+		"ptime":"1386208815",   //文章发表时间，时间戳格式
+	
+		"author":"suiling",   //文章作者
+			
+		"user_id":"0", //网站当前用户id，如果未登录就为0或空字符串
+		
+		"page_type":"detail", //当前页面全称，请勿修改
+		
+		"image_link":"http://www.cocoachina.com/cms/uploads/131205/4196-131205104I5356.png", //标题图片地址
+		
+		"description":"相信每一个编程极客都知道什么是注释，也都知道如何在代码中添加注释，今天这篇文章中，我们将不会讨论如何添加注释，或者如何添加一个完美的注释，在今天的文章里，我们将给大家奉献", // 内容简介
+		
+		"vcnt":"11831" //阅读人数
+	};
+</script>
+	</div>
+</div> <!--middle-->
+
+<div class="footer">
+	<div class="f-wrap clearfix">
+    	<div class="fl f-ls">
+        	<a href="http://www.cocoachina.com/"><img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/f-logo.png" width="200" height="72" alt="CocoaChina苹果开发中文站" data-bd-imgshare-binded="1"></a><br>
+            <a href="http://www.cocoachina.com/cms/data/sitemap.html" class="fl-link" target="_blank">网站地图</a><br>
+            <a href="http://www.cocoachina.com/aboutus/index.html" class="fl-link fl-l2" target="_blank">关于我们</a><br>
+            <a href="http://www.cocoachina.com/contactus/index.html" class="fl-link fl-l2" target="_blank">联系我们</a><br>
+            <div>
+            	合作云平台: <a href="http://126.am/8XrTA0" target="_blank">又拍云</a><br>
+				京公网安备 11010502011183<br>
+                <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备 11006519号 　京ICP证 100954号</a><br>
+                Copyright © 2008-2013 CocoaChina.com
+            </div>
+        </div>
+        
+        <div class="f-rs">
+        	<ul class="fr-list">
+            	<li>
+                	<h4><a href="http://www.cocoachina.com/cms/all.php">资讯频道</a></h4>
+                    <a href="http://www.cocoachina.com/game/" title="游戏开发" target="_blank"><span>游戏开发</span></a>
+					<a href="http://www.cocoachina.com/appstore/" title="App Store研究" target="_blank"><span>App Store研究</span></a>
+					<a href="http://www.cocoachina.com/ios/" title="iOS开发" target="_blank"><span>iOS开发</span></a>
+					<a href="http://www.cocoachina.com/game/" title="游戏开发" target="_blank"><span>游戏开发</span></a>
+					<a href="http://www.cocoachina.com/cocos/" title="Cocos引擎" target="_blank"><span>Cocos引擎</span></a>
+					<a href="http://www.cocoachina.com/industry/" title="业界动态" target="_blank"><span>业界动态</span></a>
+					<a href="http://www.cocoachina.com/design/" title="产品设计" target="_blank"><span>产品设计</span></a>
+					<a href="http://www.cocoachina.com/programmer/" title="程序人生" target="_blank"><span>程序人生</span></a>
+                </li>
+                <li>
+                	<h4><a href="http://www.cocoachina.com/bbs/">开发者论坛</a></h4>
+                    <a href="http://www.cocoachina.com/bbs/" title="论坛" target="_blank"><span>论坛</span></a>
+					 <a href="http://www.cocoachina.com/ask/" title="技术问答" target="_blank"><span>技术问答</span></a>
+					 <a href="http://d.cocoachina.com/" title="开发者中心" target="_blank"><span>开发者中心</span></a>
+					 <a href="http://code.cocoachina.com/" title="代码库" target="_blank"><span>代码库</span></a>
+					 <a href="http://tools.cocoachina.com/" title="工具库" target="_blank"><span>工具库</span></a>
+                </li>
+                <li>
+                	<h4><a href="http://open.cocoachina.com/">开发者平台</a></h4>
+                    <a href="http://open.cocoachina.com/" title="开发者平台" target="_blank"><span>开发者平台</span></a>
+					 <div>
+                    	<span>关注微信 每日推荐</span><br>
+                        <img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/cocoachina-weixin-100.jpg" width="100" height="100" alt="关注CocoaChina微信 获取每日文章推荐" data-bd-imgshare-binded="1">
+                    </div>
+                </li>
+                <li class="last">
+                	<h4><a href="javascript:void(0)">关注我们</a></h4>
+                   
+                    <div>
+                    	<span>扫一扫 浏览移动版</span><br>
+                        <img src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/cocoachina-mobile-100.jpg" width="100" height="100" alt="扫一扫 浏览CocoaChina移动版" data-bd-imgshare-binded="1">
+                    </div>
+                </li>
+            </ul>
+            <div class="fr-fs">
+            	<h4>友情链接</h4>
+                <div class="clearfix"><ul><li><a href="http://cn.cocos2d-x.org/" target="_blank">Cocos引擎中文官网</a> </li><li><a href="http://www.cocos2d-x.org/" target="_blank">cocos2d-x</a> </li><li><a href="http://www.modian.com/" target="_blank">摩点众筹</a> </li><li><a href="http://xiuxiu.iphone.meitu.com/" target="_blank">美图秀秀 iPhone 版</a> </li><li><a href="https://developer.apple.com/" target="_blank">苹果开发者中心</a> </li><li><a href="http://www.sykong.com/" target="_blank">手游那点事</a> </li><li><a href="http://leiphone.com/" target="_blank">雷锋网</a> </li><li><a href="http://www.appshare.cn/" target="_blank">工程师爸爸</a> </li><li><a href="http://ipaddh.com/" target="_blank">iPad网址导航</a> </li><li><a href="http://www.maiyadi.com/" target="_blank">麦芽地</a> </li><li><a href="http://www.nooidea.com/" target="_blank">Nooidea.com | 装傻充愣</a> </li><li><a href="http://bbs.kenapple.com/" target="_blank">啃苹果论坛</a> </li><li><a href="http://www.mac52ipod.cn/" target="_blank">苹果fans</a> </li><li><a href="http://www.macfans.com.cn/" target="_blank">苹果发烧友</a> </li><li><a href="http://www.9ria.com/" target="_blank">9RIA天地会</a> </li><li><a href="http://www.macfans.com.cn/" target="_blank">苹果发烧友</a> </li><li><a href="http://www.ityran.com/" target="_blank">泰然网</a> </li><li><a href="http://www.eoe.cn/" target="_blank">eoe开发者社区</a> </li><li><a href="http://hi.hiing.net/" target="_blank">维以不永伤</a> </li><li><a href="http://www.macidea.com/" target="_blank">远景苹果主题</a> </li><li><a href="http://gamerboom.com/" target="_blank">游戏邦</a> </li><li><a href="http://www.iapps.im/" target="_blank">爱应用</a> </li><li><a href="http://www.woshipm.com/" target="_blank">人人都是产品经理</a> </li><li><a href="http://www.9miao.com/" target="_blank">9秒社团</a> </li><li><a href="http://code.662p.com/" target="_blank">源码天堂</a> </li><li><a href="http://www.youxituoluo.com/" target="_blank">游戏陀螺</a> </li><li><a href="http://www.tuicool.com/" target="_blank">推酷网</a> </li><li><a href="http://segmentfault.com/" target="_blank">SegmentFault</a> </li></ul></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="javascript:void(0);" id="back2top">顶部</a>
+
+<script language="javascript" src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/bbsauth_new2013.php" type="text/javascript"></script>
+<script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/jquery.colorbox-min.js" type="text/javascript"></script>
+<script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/script-min.js" type="text/javascript"></script><script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/h.js" type="text/javascript"></script>
+<!--[if IE 6]>
+<script src="/cms/templets/js_new/DD_belatedPNG.js"></script>
+<script>
+  DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+<script src="./趣味横生的程序员搞怪代码注释 - CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区_files/c.php" language="JavaScript"></script>
+
+</div><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><div id="cboxNext" style="float: left;"></div><div id="cboxPrevious" style="float: left;"></div><div id="cboxSlideshow" style="float: left;"></div><div id="cboxClose" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div class="bdshare-slide-button-box bdshare-slide-style-r0" style="top: 100px; width: 0px; z-index: 99999; right: 0px;" data-bd-bind="1457970087365"><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bdshare-slide-button" style="left: -24px;"></a><div class="bdshare-slide-list-box" style="width: 0px; display: none;"><div class="bdshare-slide-top">分享到</div><div class="bdshare-slide-list"><ul class="bdshare-slide-list-ul" style="width: 226px;"></ul></div><div class="bdshare-slide-bottom" style="width: 226px;"><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="slide-more" data-cmd="more">更多...</a></div></div></div><div id="bdimgshare_1457970087368" class="sr-bdimgshare sr-bdimgshare-list sr-bdimgshare-24 sr-bdimgshare-black" style="height:42px;line-height:32px;font-size:14px;width:autopx;display:none;" data-bd-bind="1457970087368"><div class="bdimgshare-bg"></div><div class="bdimgshare-content bdsharebuttonbox bdshare-button-style0-24"><label class="bdimgshare-lbl">图片分享</label><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bds_tsina" data-cmd="tsina" hidefocus=""></a><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bds_tqq" data-cmd="tqq" hidefocus=""></a><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bds_qzone" data-cmd="qzone" hidefocus=""></a><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bds_weixin" data-cmd="weixin" hidefocus=""></a><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bds_sqq" data-cmd="sqq" hidefocus=""></a><a href="http://www.cocoachina.com/programmer/20131205/7478.html#" onclick="return false;" class="bds_more" data-cmd="more" hidefocus=""></a></div></div><iframe allowtransparency="true" id="add_speed_bfd" frameborder="0" scrolling="no" style="height: 0px; width: 0px; float: none; position: absolute; overflow: hidden; z-index: 333333; margin: 0px; padding: 0px; border: 0px none; background: none;"></iframe><div id="bfd_flbox" style="display: block; position: absolute; left: -9999px; overflow: hidden; height: 1px; width: 1px;"><object id="bfd_swf_factory2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1" height="1"><param name="allowScriptAccess" value="always"><param name="wmode" value="window"><param name="movie" value="http://static.baifendian.com/api/2.0/main.swf"><param name="quality" value="high"><param name="FlashVars" value=""><embed src="http://static.baifendian.com/api/2.0/main.swf" flashvars="" quality="high" wmode="window" name="bfd_swf_factory2" allowscriptaccess="always" swliveconnect="true" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1" height="1"></object></div></body></html>
