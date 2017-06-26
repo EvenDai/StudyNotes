@@ -1,4 +1,7 @@
-Android各版本介绍：https://developer.android.com/about/index.html
+谷歌官方学院（优达学城）：https://cn.udacity.com/
+
+Android各版本介绍：https://developer.android.com/about/index.html、https://www.android.com/intl/zh-CN_cn/versions/nougat-7-0/（这个的介绍比较简单些）
+Android的历史，介绍了各个版本的主要功能：https://www.android.com/intl/zh-CN_cn/history/#/marshmallow
 Gradle插件：https://developer.android.com/studio/releases/gradle-plugin.html
 压缩代码和资源：https://developer.android.com/studio/build/shrink-code.html 
 Google官网示例代码：https://github.com/googlesamples/
@@ -6,6 +9,17 @@ Google官网示例代码：https://github.com/googlesamples/
 Android测试示例：https://github.com/googlesamples/android-testing
 Google在Github：https://github.com/google
 MVP官方Wiki：https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
+
+关于Android模拟器的使用：https://developer.android.com/studio/run/emulator.html
+AVD的创建使用：https://developer.android.com/studio/run/managing-avds.html
+
+关于instant-run：https://developer.android.com/studio/run/index.html#instant-run
+
+关于构建：https://developer.android.com/studio/build/index.html   、https://developer.android.com/studio/build/build-variants.html
+
+AndroidStudio预览版：https://developer.android.com/studio/preview/index.html
+Android版本预览版：  https://developer.android.com/preview/index.html
+
 
 Google官方Android开发技术博客：https://android-developers.googleblog.com/ 需要翻墙，这里面的文章会有年份月份进行分类。
 
@@ -26,9 +40,15 @@ Android Youtube官网视频（包括Google I/O大会）：https://www.youtube.co
 
 示例Demo：https://developer.android.com/samples/index.html
 
+AndroidStudio功能介绍：https://developer.android.com/studio/features.html、https://developer.android.com/studio/intro/index.html
+AndroidStudio键盘快捷键：https://developer.android.com/studio/intro/keyboard-shortcuts.html
 
 AndroidStuio的所有版本下载：https://developer.android.com/studio/archive.html
 关于instant-run：https://developer.android.com/studio/run/index.html?utm_source=android-studio#instant-run
+
+Google的所有产品：https://developers.google.com/products/
+
+关于Kotlin：https://developer.android.com/kotlin/index.html
 
 Google Developers中国网站 (developers.google.cn)于2016年12月8日 正式发布，Google Developers 是由谷歌公司特别为中国开发者而建立的，它汇集了 Google 为全球开发者所提供的开发技术资源，包括 API 文档、开发案例、技术培训的视频等资源，帮助中国开发者 Develop (开发)、Grow (成长) 与 Earn (营利)。
 网站内的链接:
