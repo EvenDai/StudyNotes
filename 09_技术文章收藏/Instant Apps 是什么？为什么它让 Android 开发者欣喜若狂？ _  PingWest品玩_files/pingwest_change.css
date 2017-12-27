@@ -1,0 +1,198 @@
+#pw_recruit,#m-pw_recruit{
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  bottom: 75px;
+  right: 15px;
+  width: 48px;
+  height: 48px;
+  background-image: url(../images/pw_recruit.png);
+  background-size:100%;
+  transition: all 0.12s ease-in-out;
+  -webkit-transition: all 0.12s ease-in-out;
+  z-index:10000;
+}
+#pw_recruit.recruit-visible{
+  visibility: visible;
+    opacity: 1;
+    z-index: 999;
+}
+/* 年度活动sync+hay */
+.pw2016active{
+  margin-right: 38px;
+  width: 100px;
+}
+.header-right{
+  overflow: hidden;
+}
+.header-right ul{
+  overflow: hidden;
+  float: right;
+}
+.header-right .pw2016active{
+  float: left;
+  width: 100px;
+  height: 60px;
+  margin-right: 38px;
+  position: relative;
+}
+.header-right .pw2016active a{
+  position: absolute;
+  top: 0 ;
+  bottom:0;
+  width: 100%;
+  margin: 0 3%;
+}
+.header-right .pw2016active .sync{
+right: 0;
+}
+.header-right .pw2016active .hay{
+left: 0;
+}
+.header-right .pw2016active img{
+  width: 100%;
+  margin-top: 11px;
+}
+.pwactive_2016s{
+  display: none;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  padding: 0 15px;
+  z-index: 990;
+  height: 50px;
+  text-align: center;
+}
+ .pwactive_2016s img{
+  width: 100px;
+ }
+  .pwactive_2016s a{
+  width: 100px;
+ position: absolute;
+ top: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ bottom: 0;
+ }
+ .wxma {
+  float: left;
+}
+.wxma .con {
+  background: url(../images/service.png) no-repeat 0 0;
+  width: 157px;
+  height: 368px;
+  position: relative;
+}
+.wxma .shares {
+  position: absolute;
+  left: 10px;
+  top: 275px;
+  white-space: nowrap;
+  color: #666;
+}
+.wxma .shares img {
+  margin-right: 5px;
+}
+.wxma li {
+  text-align: center;
+}
+.wxma .qq {
+  padding-top: 105px;
+}
+.wxma .name {
+  padding-top: 8px;
+  float: left;
+  display: block;
+  width: 60px;
+  text-align: right;
+}
+#wx .s-btn {
+  background-position: 0 -89px;
+  width: 38px;
+  height: 198px;
+  margin-top: 104px;
+  float: left;
+}
+#wx .Obtn {
+  background: url(../images/service.png) no-repeat -331px -53px;
+  float: left;
+  width: 39px;
+  height: 197px;
+  margin-top: 30px;
+  margin-left: -1px;
+}
+
+#wx a.wx {
+  position: absolute;
+  top: 166px;
+  left: 15px;
+  overflow: hidden;
+  text-indent: -999em;
+  display: block;
+  width: 95px;
+  height: 95px;
+}
+.hexin-user{
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  width: 150px;
+  background-color:#fff;
+  box-sizing: border-box;
+  padding:20px 15px;
+  border-radius: 3px;
+ box-shadow: 1px 1px 4px #999;
+}
+.hexin-user .zhaopin-close{
+line-height: 1.5;
+color: #000;
+display: block;
+padding-top: 10px;
+}
+.hexin-user.hexin_left{
+  left: auto;
+  right: 0;
+  top: auto;
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  bottom: 15px;
+} 
+@media only screen and (max-width: 768px){
+.hexin-user{
+  display: none;
+}
+.#wx .Obtn{
+  display: none;
+}
+#wx{display: none;}
+  /* 秋季2016招聘 */
+  #pw_recruit{
+    display: none!important;
+  }
+  #m-pw_recruit{
+    bottom: 10px;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    width: 45px;
+    height: 45px;
+    background-image: url(../images/m-pw_recruit.png);
+  }
+  /* 2016年度活动sync+hay */
+  .header-right .pw2016active{
+    display: none;
+  }
+  .pwactive_2016s{
+    display: block;
+  }
+
+}
+@media only screen and (max-width: 414px){
+.#wx .Obtn{
+  display: none;
+}
+#wx{display: none;}
+}

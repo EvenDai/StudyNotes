@@ -1,0 +1,15 @@
+《Gradle Recipes for android》/《巧用Gradle构建Android应用》
+ISBN of book:  978-7-121-30619-8
+ 
+Questions/问题:
+Page 80/第80页：
+task copyApks(type: Copy, dependsOn: assembleDebug) {
+       ....
+}
+Sync Project has question/同步项目时报这个错误: Could not get unknown property 'assembleDebug' for project ':app' of type org.gradle.api.Project.
+ 
+ 
+示例4-8. copyApks作为构建的一部分
+build.dependsOn copyApks
+ 
+where write is this code？/在什么地方写这句代码？
