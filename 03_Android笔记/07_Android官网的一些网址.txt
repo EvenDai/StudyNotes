@@ -20,6 +20,8 @@ AVD的创建使用：https://developer.android.com/studio/run/managing-avds.html
 AndroidStudio预览版：https://developer.android.com/studio/preview/index.html
 Android版本预览版：  https://developer.android.com/preview/index.html
 
+统计Android各版本手机的使用率，还有屏幕大小与密度的使用率：https://developer.android.com/about/dashboards/index.html
+
 
 Google官方Android开发技术博客：https://android-developers.googleblog.com/ 需要翻墙，这里面的文章会有年份月份进行分类。
 
