@@ -1,7 +1,0 @@
-Math.sqrt(16)
-println 'Test drive Groovy'
-String.metaClass.isPalindrome = {
-  delegate == delegate.reverse()
-}
-'mom'.isPalindrome()
-'mom'.l	

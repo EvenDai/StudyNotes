@@ -1,8 +1,0 @@
-language: java
-install: true
-
-jdk:
-  - openjdk7
-
-script:
-  - ./gradlew verifyListings -s
