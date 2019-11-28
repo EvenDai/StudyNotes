@@ -1,0 +1,29 @@
+## onInitialSyncComplete()
+room.accountData = false
+room.avatarUrl = null
+room.callAvatarUrl = null
+room.highlightCount = 0
+room.isConferenceUserRoom = false
+room.isDirect = true
+room.isDirectChatInvitation = false
+room.isEncrypted = false
+room.isInvited = false
+room.isJoined = true
+room.isLeaving = false
+room.isMember = true
+room.isOngoingConferenceCall = false
+room.isLeft = false
+room.isURLPreviewAllowedByUser = true
+room.getRoomDisplayName = evendai
+room.notificationCount = 1
+room.numberOfInvitedMembers = 0
+room.numberOfJoinedMembers = 2
+room.readMarkerEventId = $Ug2UQJ00GeL2DivZaOBjNOk4AisE6mucx2gd21zuc8g
+room.roomSummary = org.matrix.androidsdk.data.RoomSummary@2789b91
+room.topic = null
+room.roomId = !BsasDCRjtYfgCSoqjb:matrix.org
+room.state = org.matrix.androidsdk.data.RoomState@6a421b8
+room.canPerformCall = true
+room.cancelRemoteHistoryRequest = kotlin.Unit
+roomMember: evendai (@evendai:matrix.org) org.matrix.androidsdk.rest.model.RoomMember@fe69af6
+roomMember: daizhenliang (@daizhenliang:matrix.org) org.matrix.androidsdk.rest.model.RoomMember@8ab1ef7

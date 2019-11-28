@@ -1,0 +1,23 @@
+2019-07-11 22:06:49.462 ? E/BufferQueueProducer: [SurfaceView - cn.dazhou.railway.ball/org.doubango.imsdroid.Main] queueBuffer: BufferQueue has been abandoned
+2019-07-11 22:06:49.545 ? E/BufferQueueProducer: [SurfaceView - cn.dazhou.railway.ball/org.doubango.imsdroid.Main] cancelBuffer: BufferQueue has been abandoned
+2019-07-11 22:06:49.548 ? E/BufferQueueProducer: [SurfaceView - cn.dazhou.railway.ball/org.doubango.imsdroid.Main] cancelBuffer: BufferQueue has been abandoned
+2019-07-11 22:06:49.549 ? E/BufferQueueProducer: [SurfaceView - cn.dazhou.railway.ball/org.doubango.imsdroid.Main] cancelBuffer: BufferQueue has been abandoned
+2019-07-11 22:06:49.553 ? E/BufferQueueProducer: [SurfaceView - cn.dazhou.railway.ball/org.doubango.imsdroid.Main] cancelBuffer: BufferQueue has been abandoned
+
+
+2019-07-11 22:22:22.906 system_process E/ActivityManager: Sending non-protected broadcast org.doubango.ngn.events.NgnRegistrationEventArgs.ACTION_REGISTRATION_CHANGED from system 10667:cn.dazhou.railway.ball/1000 pkg cn.dazhou.railway.ball
+    java.lang.Throwable
+        at com.android.server.am.ActivityManagerService.checkBroadcastFromSystem(ActivityManagerService.java:18013)
+        at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:18494)
+        at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:18676)
+        at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:499)
+        at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2857)
+        at android.os.Binder.execTransact(Binder.java:565)
+2019-07-11 22:22:22.909 system_process E/ActivityManager: Sending non-protected broadcast org.doubango.ngn.events.NgnRegistrationEventArgs.ACTION_REGISTRATION_CHANGED from system 10667:cn.dazhou.railway.ball/1000 pkg cn.dazhou.railway.ball
+    java.lang.Throwable
+        at com.android.server.am.ActivityManagerService.checkBroadcastFromSystem(ActivityManagerService.java:18013)
+        at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:18585)
+        at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:18676)
+        at android.app.ActivityManagerNative.onTransact(ActivityManagerNative.java:499)
+        at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:2857)
+        at android.os.Binder.execTransact(Binder.java:565)

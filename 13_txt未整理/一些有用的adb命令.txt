@@ -1,0 +1,20 @@
+PS:一些有用的adb命令
+1、通过adb 命令获取当前运行的Activity
+adb shell dumpsys activity | findstr "mFocusedActivity"
+1
+2
+2、通过adb 使用命令行截取对应的log并保存到硬盘对应目录下
+adb logcat -s tag >d:log.txt
+1
+3、将log和当前时间 保存到当前目录下
+adb logcat -v time >a.log
+1
+4、通过android.app.ActivityManager获取topActivity
+ public static String getTopActivity(Context context) {
+        android.app.ActivityManager am = (android.app.ActivityManager) context.getSystemService(ACTIVITY_SERVICE);
+        ComponentName cn = am.getRunningTasks(1).get(0).topActivity;
+        return cn.getShortClassName().toString();
+    }
+————————————————
+版权声明：本文为CSDN博主「CrazyMo_」的原创文章，遵循 CC 4.0 BY 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/crazymo_/article/details/78875686

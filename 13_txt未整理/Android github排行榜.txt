@@ -1,0 +1,151 @@
+统计于2019年10月12日
+https://github.com/flutter/flutter Flutter是Google的移动应用SDK，可在创纪录的时间内在iOS和Android上制作高质量的本机界面。
+https://github.com/justjavac/free-programming-books-zh_CN 免费的计算机编程类中文书籍
+https://github.com/google/material-design-icons 由Google提供的Material Design图标
+https://github.com/wasabeef/awesome-android-ui  精选的Android UI / UX库的精选列表。
+https://github.com/square/okhttp 适用于Android，Kotlin和Java的HTTP客户端。
+https://github.com/android/architecture-samples  android官网Demo，一系列示例，用于讨论和展示适用于Android应用的不同架构工具和模式。
+https://github.com/square/retrofit  针对Android和Java的类型安全的HTTP客户端 
+https://github.com/Hack-with-Github/Awesome-Hacking 黑客，渗透测试者和安全研究人员的各种出色列表的集合
+https://github.com/Trinea/android-open-project Android开放源代码项目的分类集合
+https://github.com/PhilJay/MPAndroidChart  强大的 🚀 Android图表视图/图形视图库
+https://github.com/bumptech/glide 适用于Android的图像加载和缓存库专注于平滑滚动
+https://github.com/fastlane/fastlane  自动构建和发布iOS和Android应用程序的最简单方法
+https://github.com/airbnb/lottie-android   在Android和iOS，Web和React Native上本地渲染After Effects动画
+https://github.com/shadowsocks/shadowsocks-android 适用于Android的Shadowsocks客户端，是一款翻墙代理软件
+https://github.com/codepath/android_guides  适用于Android开发人员的广泛的开源指南
+https://github.com/Blankj/AndroidUtilCode  Android开发人员应收集以下utils
+https://github.com/bilibili/ijkplayer 基于FFmpeg n3.4的Android / iOS视频播放器，带有MediaCodec，VideoToolbox支持。
+https://github.com/xitu/gold-miner 掘金翻译计划，可能是世界最大最好的英译中技术社区，最懂读者和译者的翻译平台
+https://github.com/zxing/zxing 适用于Java，Android的ZXing（“斑马线”）条形码扫描库
+https://github.com/square/leakcanary LeakCanary是适用于Android的内存泄漏检测库。
+https://square.github.io/leakcanary/shark/  LeakCanary的配套工具，用于分析内存堆栈信息
+https://github.com/Solido/awesome-flutter 很棒的列表，精选了最好的Flutter库，工具，教程，文章等。
+https://github.com/skylot/jadx Dex到Java反编译器
+https://github.com/Genymobile/scrcpy  显示和控制您的Android设备（即把Android手机界面分享到电脑上显示）
+https://github.com/alibaba/fastjson Java的快速JSON解析器/生成器。（阿里云Data Lake Analytics提供支持）
+https://github.com/scwang90/SmartRefreshLayout 拖动刷新，上拉加载，二级刷新，淘宝二楼，RefreshLayout，OverScroll，Android智能翻转刷新框架，支持越界回弹，越界转变，具有极强的扩展性，集成了几十种炫酷的标题和Footer。
+https://github.com/CymChad/BaseRecyclerViewAdapterHelper  功能强大且灵活的RecyclerAdapter
+https://github.com/futurice/android-best-practices  Android开发的最佳做法  由Futurice开发人员为Android开发做的事情
+https://github.com/NativeScript/NativeScript NativeScript是一个开放源代码框架，用于使用JavaScript构建真正的本机移动应用程序。使用Angular和Vue.js，FlexBox和CSS等网络技能，并在iOS和Android上获得本机UI和性能。
+https://github.com/alibaba/weex 用于构建移动跨平台UI的框架
+https://github.com/react-native-elements/react-native-elements  跨平台React Native UI Toolkit 
+https://github.com/afollestad/material-dialogs 适用于Kotlin和Android的美观，流畅且可扩展的对话框API。
+https://github.com/libgdx/libgdx 桌面/ Android / HTML5 / iOS Java游戏开发框架 
+https://github.com/Kotlin/anko  令人愉快的Android应用程序开发
+https://github.com/framework7io/framework7   用于构建iOS和Android应用程序的全功能HTML框架
+https://github.com/google/flexbox-layout   Android版Flexbox，类似于LinearLayout，但比它强大
+https://github.com/Tencent/tinker Tinker是适用于Android的修补程序库，它支持dex，库和资源更新，而无需重新安装apk。
+https://github.com/google/ExoPlayer   适用于Android的可扩展媒体播放器
+https://github.com/android10/Android-CleanArchitecture  这是一个示例应用程序，是我写过的一系列博客文章的一部分，这些文章涉及如何使用Bob叔叔的简洁架构方法来构建android应用程序。
+https://github.com/GeekyAnts/NativeBase  React Native https://nativebase.io/的基本跨平台UI组件
+https://github.com/hdodenhof/CircleImageView  适用于Android的圆形ImageView
+https://github.com/quasarframework/quasar   Quasar Framework-在创纪录的时间内构建高性能VueJS用户界面
+https://github.com/CarGuo/GSYVideoPlayer  视频播放器（IJKplayer、ExoPlayer、MediaPlayer），HTTPS，支持弹幕，支持滤镜、水印、gif截图，片头广告、中间广告，多个同时播放，支持基本的拖动，声音、亮度调节，支持边播边缓存，支持视频自带rotation的旋转（90,270之类），重力旋转与手动旋转的同步支持，支持列表播放 ，列表全屏动画，视频加载速度，列表小窗口支持拖动，动画效果，调整比例，多分辨率切换，支持切换播放器，进度条小窗口预览，列表切换详情页面无缝播放，rtsp、concat、mpeg。
+https://github.com/react-community/create-react-native-app  在没有构建配置的任何操作系统上创建一个React Native应用程序。
+https://github.com/francistao/LearningNotes  学习笔记
+https://github.com/orhanobut/logger  简单，漂亮，功能强大的Android记录器
+https://github.com/androidannotations/androidannotations 快速的Android开发。易于维护。
+https://github.com/daimajia/AndroidViewAnimations  可爱的视图动画集合。
+https://github.com/alibaba/ARouter 用于协助Android组件化改造的框架（帮助Android App进行组件化改造的路由框架）
+https://github.com/Curzibn/Luban 鲁班（Luban）-图像压缩的效率非常接近WeChat Moments /可能是最接近微信朋友圈的图片压缩算法
+https://github.com/realm/realm-java  Realm是一个移动数据库：替代SQLite和ORM
+https://github.com/mikepenz/MaterialDrawer   灵活，易于使用的，全部集成在一个抽屉中的Android项目库。现在是全新的材料2设计。
+https://github.com/didi/DoraemonKit  简称 "DoKit" 。一款功能齐全的客户端（ iOS 、Android、微信小程序 ）研发助手，你值得拥有。
+https://github.com/zhihu/Matisse  经过精心设计的Android本地图像和视频选择器
+https://github.com/appium/appium  适用于iOS，Android和Windows Apps的自动化。跨平台测试自动化工具。
+https://github.com/txthinking/brook  Brook是跨平台（Linux / MacOS / Windows / Android / iOS）代理/ VPN软件
+https://github.com/kivy/kivy  Kivy是一个开放源代码，跨平台的Python 框架，用于开发利用创新的多点触控用户界面的应用程序。目的是允许快速简便的交互设计和快速原型制作，同时使您的代码可重复使用和部署。
+https://github.com/alibaba/vlayout  Project vlayout是RecyclerView的功能强大的LayoutManager扩展，它为RecyclerView提供了一组布局。当网格，列表和其他布局位于同一recyclerview中时，使其能够处理复杂的情况
+https://github.com/openstf/stf  通过浏览器控制和管理Android设备。
+https://github.com/lipangit/JiaoZiVideoPlayer  浮动视图和全屏。高度自定义的开源安卓视频框架
+https://github.com/xbmc/xbmc  Kodi是屡获殊荣的免费开放源代码家庭影院/媒体中心软件和数字媒体娱乐中心。凭借其精美的界面和强大的外观引擎，可用于Android，BSD，Linux，macOS，iOS和Windows。
+https://github.com/wasabeef/recyclerview-animators  一个Android动画库，可轻松将itemanimator添加到RecyclerView项目。
+https://github.com/ksoichiro/Android-ObservableScrollView  Android库可观察可滚动视图上的滚动事件。
+https://github.com/permissions-dispatcher/PermissionsDispatcher  简单的基于注释的API处理运行时权限。
+https://github.com/Yalantis/uCrop  Android图像裁剪库
+https://github.com/Tencent/QMUI_Android  提高Android UI开发效率的UI库
+https://github.com/navasmdc/MaterialDesignLibrary  这是一个库，其中包含要在android 2.2中使用的Android L组件
+https://github.com/dipakkr/A-to-Z-Resources-for-Students  精选的大学生资源列表,A到Z排序
+https://github.com/tbruyelle/RxPermissions   由RxJava2支持的Android运行时权限
+https://github.com/laurent22/joplin  Joplin-具有Windows，macOS，Linux，Android和iOS同步功能的笔记和待办事项应用程序。
+https://github.com/lingochamp/FileDownloader  多任务，多线程（MultiConnection），断点恢复，高并发，使用简单，单/非单进程
+https://github.com/81813780/AVLoadingIndicatorView  AVLoadingIndicatorView是一组不错的Android加载动画。
+https://github.com/iBotPeaches/Apktool  逆向工程Android apk文件的工具 
+https://github.com/JessYanCoding/MVPArms  基于MVP开发的Android应用程序的通用体系结构集成了许多开源项目，从而使您的开发更快，更轻松
+https://github.com/Tencent/MMKV  微信开发的高效，小型移动键值存储框架。
+https://github.com/JessYanCoding/AndroidAutoSize  一种低成本的Android屏幕适配解决方案（今日头条屏幕适配方案终极版，一个极点的Android屏幕适配方案）。
+https://github.com/flutter/plugins  Flutter团队维护的Flutter插件 
+https://github.com/roughike/BottomBar  （不推荐使用）模仿新的Material Design底部导航模式的自定义视图组件。
+https://github.com/mono/mono  Mono开源ECMA CLI，C＃和.NET实现。
+https://github.com/material-components/material-components-android  适用于Android的模块化和可自定义的Material Design UI组件
+https://github.com/wasabeef/glide-transformations   一个Android转换库，为Glide提供了各种图像转换。
+https://github.com/android-hacker/VirtualXposed  一个简单的应用程序，无需root用户即可使用Xposed，解锁引导程序或修改系统映像等 
+https://github.com/open-android/Android  GitHub上最火的Android开源项目,所有开源项目都有详细资料和配套视频
+https://github.com/Freelander/Android_Data  Android 学习资料收集
+https://github.com/florent37/MaterialViewPager  Material Design ViewPager易于使用的库
+https://github.com/google/filament  Filament是一款基于物理的实时渲染引擎，适用于Android，iOS，Windows，Linux，macOS和WASM / WebGL
+https://github.com/googlesamples/easypermissions  简化Android M系统权限
+https://github.com/koral--/android-gif-drawable  视图和可绘制以在Android上显示动画GIF
+https://github.com/Tencent/wcdb  WCDB是微信开发的跨平台数据库框架。
+https://github.com/laobie/StatusBarUtil 用于在Android App上设置状态栏样式的工具。
+https://github.com/OnsenUI/OnsenUI  使用HTML5和JavaScript的移动应用开发框架和SDK。
+https://github.com/JackyAndroid/AndroidInterview-Q-A  顶级互联网公司android面试问答
+https://github.com/android/android-ktx  一组用于Android应用程序开发的Kotlin扩展。
+https://github.com/Tencent/ncnn  ncnn是针对移动平台进行了优化的高性能神经网络推理框架
+https://github.com/GcsSloop/AndroidNote 安卓学习笔记
+https://github.com/alibaba/atlas 强大的Android动态组件框架。
+https://github.com/google/agera  Android的反应式编程
+https://github.com/openframeworks/openFrameworks openFrameworks是社区开发的跨平台工具包，用于C ++中的创意编码。 
+https://github.com/LuckSiege/PictureSelector  适用于Android或多图片选择器的图片选择器库
+https://github.com/gyf-dev/ImmersionBar  android 4.4以上沉浸式状态栏和沉浸式导航栏管理
+https://github.com/cymcsg/UltimateRecyclerView  （Android中ListView的高级灵活版本）具有刷新，加载更多内容，动画和许多其他功能。
+https://github.com/Bearded-Hen/Android-Bootstrap  具有Glyph图标的Android的Bootstrap样式小部件
+https://github.com/facebook/buck  一个快速构建系统，鼓励通过各种平台和语言创建小型可重用的模块。
+https://github.com/iampawan/FlutterExampleApps  [示例APPS]基本Flutter应用程序，用于Flutter开发人员。
+https://github.com/aritraroy/UltimateAndroidReference 最终的Android参考-您成为更好的Android开发者的道路 该项目的目的是提供一个精选的Android库，工具，开源项目，书籍，博客，教程-随便您如何命名。
+https://github.com/geeeeeeeeek/WeChatLuckyMoney  童忠义（微博）的微信抢红包插件。一款可帮助您在微信群组中抓取红色数据包的Android应用。
+https://github.com/lecho/hellocharts-android  适用于Android的图表/图形库，与API 8+兼容，多种图表类型均支持缩放，滚动和动画
+https://github.com/Templarian/MaterialDesign the4600多个来自社区的Material Design图标
+https://github.com/didi/chameleon 一套代码运行多端，一端所见即多端所见
+https://github.com/alibaba/AndFix  AndFix是一个为Android App提供修复程序的库。
+https://github.com/crazycodeboy/TakePhoto  一款用于在Android设备上获取照片（拍照或从相册、文件中选择）、裁剪图片、压缩图片的开源工具库
+https://github.com/mzlogin/awesome-adb  ADB，即 Android Debug Bridge，它是 Android 开发/测试人员不可替代的强大工具，也是 Android 设备玩家的好玩具。
+https://github.com/ogaclejapan/SmartTabLayout 自定义的ViewPager标题栏，可在滚动时向用户提供连续反馈
+
+
+Android官方Simple代码：https://github.com/android/user-interface-samples
+
+
+
+
+
+
+
+开源app：
+https://github.com/laurent22/joplin  Joplin-具有Windows，macOS，Linux，Android和iOS同步功能的笔记和待办事项应用程序。
+
+
+开源贡献大：
+https://github.com/airbnb
+https://github.com/alibaba
+https://github.com/Tencent/
+https://github.com/google/
+https://jakewharton.com/blog/
+
+Google开发人员认证：https://developers.google.com/training/certification/associate-android-developer/
+
+
+可学习
+中文翻译：https://github.com/xitu/gold-miner/blob/master/android.md
+https://github.com/codepath/android_guides  适用于Android开发人员的广泛的开源指南
+https://github.com/android/architecture-samples  android官网Demo，一系列示例，用于讨论和展示适用于Android应用的不同架构工具和模式。
+https://github.com/justjavac/free-programming-books-zh_CN 免费的计算机编程类中文书籍
+https://github.com/francistao/LearningNotes  学习笔记
+https://qmuiteam.com/
+https://cn.udacity.com
+ttps://github.com/open-android/Android  GitHub上最火的Android开源项目,所有开源项目都有详细资料和配套视频
+https://github.com/dipakkr/A-to-Z-Resources-for-Students/blob/master/Android/Android.md
+https://github.com/artem-zinnatullin/TheContext-Podcast
+https://github.com/Freelander/Android_Data  Android 学习资料收集
+https://github.com/florent37/MaterialViewPager  易于使用的Material Design ViewPager库 

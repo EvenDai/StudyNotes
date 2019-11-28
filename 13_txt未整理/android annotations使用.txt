@@ -1,0 +1,5 @@
+https://sites.google.com/a/android.com/tools/tech-docs/support-annotations
+https://developer.android.com/studio/write/annotations.html
+
+Lint使用：https://developer.android.com/studio/write/lint
+NinePatch：https://developer.android.com/studio/write/draw9patch

@@ -1,0 +1,3 @@
+http://10.238.113.50:8088/railway_emergency_server/SysAppVersion/queryNewVersion?appcode=cn.dazhou.railway.ball&versioncode=20190812
+
+http://10.238.113.50:8088/railway_emergency_server/SysAppVersion/queryNewVersion

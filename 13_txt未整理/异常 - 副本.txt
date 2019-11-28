@@ -1,0 +1,10 @@
+踢出会议时报的异常
+2019-09-09 22:27:13.534 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnSipSession: mRefCount=0
+2019-09-09 22:27:13.536 cn.dazhou.railway.ball E/SipEventProcessor: 收到消息事件，type = INCOMING, 消息内容： {"type":"kick","group":"60026","ipphone":"20308"} 
+2019-09-09 22:27:13.657 cn.dazhou.railway.ball E/org.doubango.ngn.sip.NgnSipSession: finalize(), 准备删除会话id为3的会话，对象类型为：NgnMessagingSession，引用数为：0
+    
+    --------- beginning of crash
+2019-09-09 22:27:13.657 cn.dazhou.railway.ball A/libc: Fatal signal 11 (SIGSEGV), code 1, fault addr 0x4 in tid 2504 (FinalizerDaemon)
+2019-09-09 22:27:15.832 cn.dazhou.railway.ball W/AudioTrack: releaseBuffer() track 0xd0341200 disabled due to previous underrun, restarting
+    
+    --------- beginning of system

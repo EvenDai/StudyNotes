@@ -1,0 +1,14 @@
+登录地址：http://10.238.113.50:8088/railway_emergency_login/login/
+登录参数：{
+	appType=android, 
+	username=17010087, 
+	password=123456, 
+	versionName=2.0.3, 
+	versionCode=201909181, 
+	ipAddr=, 			
+	hardwareCode=862914035057859, (IMEI)
+	timestamp=1568886092567,      (当前时间)
+}
+
+注销登录：http://10.238.113.50:8088/railway_emergency_login/loginOut
+注销参数：userid = 178

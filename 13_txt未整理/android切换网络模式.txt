@@ -1,0 +1,9 @@
+https://www.baidu.com/s?wd=android%20app%E5%88%87%E6%8D%A2%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F&rsv_spt=1&rsv_iqid=0x94d89e52001bb8fd&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_dl=tb&rsv_enter=1&rsv_sug3=21&rsv_sug1=14&rsv_sug7=100&rsv_t=5050QrpuK3OQ%2FnRTbs5nXKIgoT5dXJ7721aasqOdFXmQpU5iDNc8dagS0oHZ%2F74oldRP&rsv_sug2=0&inputT=9805&rsv_sug4=9806
+
+开关Apn：https://blog.csdn.net/weixin_34185512/article/details/86101395  https://blog.csdn.net/baidu_29638129/article/details/79986825
+
+http://10.238.113.50:8088/emergency_file/apk/1567411986995_Railway_4G_Platform_ball_set.apk
+
+
+https://stackoverflow.com/questions/10170179/change-mobile-network-mode-gsm-wcdma-auto 牛B
+

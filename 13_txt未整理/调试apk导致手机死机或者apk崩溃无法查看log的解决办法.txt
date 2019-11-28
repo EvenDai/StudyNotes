@@ -1,0 +1,1 @@
+关于使用adb命令来获取到全栈的log并导入一个文件中，适用于手机死机而导致手机断开无法查看log的情况：adb shell logcat - v time - b main - b even >C:\log.txt

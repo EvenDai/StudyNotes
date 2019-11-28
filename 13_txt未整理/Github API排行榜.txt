@@ -1,0 +1,1 @@
+https://github.com/jakubroztocil/httpie HTTPie：CLI，类似于cURL的人类工具

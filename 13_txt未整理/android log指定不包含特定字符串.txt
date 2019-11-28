@@ -1,0 +1,2 @@
+^((?!Open ext file).)*$
+这里指定为不包含“Open ext file”字符串

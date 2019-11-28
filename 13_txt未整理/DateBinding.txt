@@ -1,0 +1,140 @@
+官方示例代码：
+https://github.com/googlesamples/android-databinding
+
+环境配置：在app的gradle的android中加入：
+    dataBinding {
+        enabled = true
+    }
+	
+	如果是kotlin项目，还需要添加这个插件：apply plugin: 'kotlin-kapt'
+	
+如果应用依赖于一个库，这个库使用了DataBinding,但是我们的应用并没有使用DataBinding，这种情况我们的应用也需要配置这一项
+
+	
+在gradle.properties中添加：
+android.databinding.enableV2=true  （注：现在最新版本似乎不用配置这个设置了）
+
+创建一个视频数据JavaBean：
+data class User(val firstName: String, val lastName: String)
+
+在需要使用此JavaBean的视图中：
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+
+        <variable
+            name="user"
+            type="cn.dazhou.railway.datebindingdemo.User" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"/>
+
+    </LinearLayout>
+</layout>
+上面的data中，类的使用也可以先导包，如下：
+    <data>
+        <import type="cn.dazhou.railway.datebindingdemo.User"/>
+        <variable name="user" type="User" />
+    </data>
+
+在Activity的onCreate方法中删除之前的setContentView方法，改成如下设置：
+        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.user = User("Even", "Dai")
+或者使用这种方式：
+		val binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater) // 此方式将自动填充R.layout.activity_main
+		binding.user = User("Even", "Dai")
+		注：经实验，这个方式并不起作用
+
+如果布局是用于Fragment、ListView或RecyclerView，可能更需要使用inflate方法，如下：
+val listItemBinding = ListItemBinding.inflate(layoutInflater, viewGroup, false)
+// or
+val listItemBinding = DataBindingUtil.inflate(layoutInflater, R.layout.list_item, viewGroup, false)
+
+数据绑定还可以进行一些表达式运算，如下：
+数据运算： + - / * %
+字符串连接： +
+逻辑运算： && ||
+二进制运算： & | ^
+Unary（一元运算）： + - ! ~
+位移运算： >> >>> <<
+比较运算： == > < >= <= (请注意， < 必须转换为 &lt;)
+instanceof
+分组 ()
+文字 - 字符, String, numeric, null
+Cast
+方法调用
+字段访问
+数组访问 []
+三元运算符 ?:
+
+示例如下：
+android:text="@{user.firstName + user.lastName}"
+android:text="@{String.valueOf(index + 1)}"
+android:visibility="@{age > 13 ? View.GONE : View.VISIBLE}"
+android:transitionName='@{"image_" + id}'
+
+空合并运算符
+android:text="@{user.firstName ?? user.lastName}" 如果firstName不为空，则使用firstName，如果为空则使用lastName
+等效于android:text="@{user.firstName != null ? user.firstName : user.lastName}"
+
+自动避免空指针异常，如user.name中为null，则user.name默认值为null，如user.age是int类型，则user.age默认值为0
+
+常见集合，例如arrays、lists、sparse lists、maps，可以使用[]运算符来访问更方便，示例如下：
+<data>
+    <import type="android.util.SparseArray"/>
+    <import type="java.util.Map"/>
+    <import type="java.util.List"/>
+    <variable name="list" type="List&lt;String>"/>
+    <variable name="sparse" type="SparseArray&lt;String>"/>
+    <variable name="map" type="Map&lt;String, String>"/>
+    <variable name="index" type="int"/>
+    <variable name="key" type="String"/>
+</data>
+…
+android:text="@{list[index]}"
+…
+android:text="@{sparse[index]}"
+…
+android:text="@{map[key]}"
+注意：为了使XML在语法上正确，必须对<字符进行转义 。例如：List<String>写成 List&lt;String>
+您也可以使用object.key符号在map中引用值。例如，@{map[key]}在上面的示例中，可以将替换为 @{map.key}。
+
+绑定静态方法：
+public class Util {
+    public static String getString() {
+        return "哈哈哈";
+    }
+}
+
+
+    <data>
+        <import type="cn.dazhou.railway.datebindingdemo.Util"/>
+        <variable name="user" type="User" />
+    </data>
+	
+	<TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Util.string}"/>
+			
+DataBinding类中自动初始化找到了所有的布局控件，示例如下：        
+		<TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+			
+		val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.tvAddress.text = "广州"

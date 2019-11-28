@@ -1,0 +1,17 @@
+UDP不适合广域网环境，改进就不说了
+
+理想的解决方案是TCP长连接。二次开发最简单的方式就是基于xmpp二次开发。用户数量不大，用openfire+插件开发实现，客户端采用smack/asmack实现
+
+首先要了解一下xmpp协议和自定义消息方法
+
+openfire服务器插件开发：
+http://www.blogjava.net/jyleon/articles/254197.html
+
+服务器消息拦截器插件
+http://zhonglunshun.iteye.com/blog/2175317
+
+客户端：smack解析自定义包结构.md
+https://github.com/iRusher/XMPPDoc/blob/master/smack%E8%A7%A3%E6%9E%90%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E7%BB%93%E6%9E%84.md
+
+Android中实现自定义XMPP消息包收发
+http://blog.csdn.net/tiandawu/article/details/52351123

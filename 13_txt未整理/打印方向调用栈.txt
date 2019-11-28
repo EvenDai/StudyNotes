@@ -1,0 +1,9 @@
+    fun printMethodUseStackTrace() {
+        Throwable().stackTrace.forEachIndexed { index, stackTraceElement ->
+            Logger.d(TAG_DISPLAY, stackTraceElement.className)//返回类的完全限定名，该类包含由该堆栈跟踪元素所表示的执行点。
+            Logger.d(TAG_DISPLAY, stackTraceElement.fileName)//返回源文件名，该文件包含由该堆栈跟踪元素所表示的执行点。
+            Logger.d(TAG_DISPLAY, stackTraceElement.lineNumber)//返回源行的行号，该行包含由该堆栈该跟踪元素所表示的执行点。
+            Logger.d(TAG_DISPLAY, stackTraceElement.methodName)//返回方法名，此方法包含由该堆栈跟踪元素所表示的执行点。
+            Logger.d(TAG_DISPLAY, "-------------第" + index + "级调用-------------------");
+        }
+    }

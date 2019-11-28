@@ -1,0 +1,64 @@
+2019-09-09 22:29:56.789 cn.dazhou.railway.ball I/H264Encoder: 编码器每10秒收到203帧
+2019-09-09 22:29:58.973 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnSipSession: mRefCount=0
+2019-09-09 22:29:58.974 cn.dazhou.railway.ball E/SipEventProcessor: 收到消息事件，type = INCOMING, 消息内容：{"action":"new","bgroup":"60026","conferenceType":1,"creator":{"departmentid":100100,"ipphone":"10094","organizeRole":"2","role":"1","userid":146,"username":"主席台05","usertype":0,"utype":0},"groupid":53,"groupname":"应急组168","grouptype":1,"host":"10094","ipphone":"20308","organizer":{"departmentid":100100,"ipphone":"10094","organizeRole":"1","role":"2","userid":146,"username":"主席台05","usertype":0,"utype":0}}
+2019-09-09 22:29:58.983 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnAVSession: setState(INPROGRESS)
+2019-09-09 22:29:58.983 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnAVSession: initializeConsumersAndProducers()
+2019-09-09 22:29:58.983 cn.dazhou.railway.ball E/SipEventProcessor: 创建的音频会话id为：4
+2019-09-09 22:29:58.983 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnSipSession: mRefCount=2
+2019-09-09 22:29:58.984 cn.dazhou.railway.ball E/SipUtil: validUri = sip:pttmonitor60026@10.238.113.60
+2019-09-09 22:29:58.987 cn.dazhou.railway.ball D/org.doubango.ngn.media.NgnProxyPluginMgr: OnPluginCreated(5,twrap_proxy_plugin_audio_consumer)
+2019-09-09 22:29:58.987 cn.dazhou.railway.ball D/org.doubango.ngn.media.NgnProxyPluginMgr: OnPluginCreated(6,twrap_proxy_plugin_audio_producer)
+2019-09-09 22:29:58.987 cn.dazhou.railway.ball E/org.doubango.ngn.media.NgnProxyAudioProducer: NgnProxyAudioProducer是视频的吗？false, sessionId = -1
+2019-09-09 22:29:58.995 cn.dazhou.railway.ball E/SipEventProcessor: 已呼出联指会议
+2019-09-09 22:29:59.002 cn.dazhou.railway.ball E/tinyWRAP: ***[DOUBANGO ERROR]: function: "tdav_session_audio_producer_enc_cb()" 
+    file: "src/audio/tdav_session_audio.c" 
+    line: "198" 
+    MSG: No codec matched
+2019-09-09 22:29:59.022 cn.dazhou.railway.ball E/org.doubango.imsdroid.screens.ScreenAV: SipEvent：inprogress
+2019-09-09 22:29:59.023 cn.dazhou.railway.ball E/SipEventProcessor: 呼叫状态: inprogress, sessionId = 4, eventType = inprogress, mediaType = audio phrase = Dialog connecting
+2019-09-09 22:29:59.023 cn.dazhou.railway.ball E/tinyWRAP: ***[DOUBANGO ERROR]: function: "tdav_session_audio_producer_enc_cb()" 
+    file: "src/audio/tdav_session_audio.c" 
+    line: "198" 
+    MSG: No codec matched
+2019-09-09 22:29:59.043 cn.dazhou.railway.ball E/tinyWRAP: ***[DOUBANGO ERROR]: function: "tdav_session_audio_producer_enc_cb()" 
+    file: "src/audio/tdav_session_audio.c" 
+    line: "198" 
+    MSG: No codec matched
+2019-09-09 22:29:59.062 cn.dazhou.railway.ball E/tinyWRAP: ***[DOUBANGO ERROR]: function: "tdav_session_audio_producer_enc_cb()" 
+    file: "src/audio/tdav_session_audio.c" 
+    line: "198" 
+    MSG: No codec matched
+2019-09-09 22:29:59.082 cn.dazhou.railway.ball E/tinyWRAP: ***[DOUBANGO ERROR]: function: "tdav_session_audio_producer_enc_cb()" 
+    file: "src/audio/tdav_session_audio.c" 
+    line: "198" 
+    MSG: No codec matched
+2019-09-09 22:29:59.102 cn.dazhou.railway.ball E/tinyWRAP: ***[DOUBANGO ERROR]: function: "tdav_session_audio_producer_enc_cb()" 
+    file: "src/audio/tdav_session_audio.c" 
+    line: "198" 
+    MSG: No codec matched
+2019-09-09 22:29:59.113 cn.dazhou.railway.ball E/org.doubango.imsdroid.screens.ScreenAV: SipEvent：sip_response
+2019-09-09 22:29:59.114 cn.dazhou.railway.ball E/SipEventProcessor: 呼叫状态: sip_response, sessionId = 4, eventType = sip_response, mediaType = audio phrase = Giving a try
+2019-09-09 22:29:59.114 cn.dazhou.railway.ball E/org.doubango.ngn.media.NgnProxyAudioProducer: callback.prepare()
+2019-09-09 22:29:59.114 cn.dazhou.railway.ball D/org.doubango.ngn.media.NgnProxyAudioConsumer: prepareCallback(20,8000,1)
+2019-09-09 22:29:59.132 cn.dazhou.railway.ball D/AudioTrack: Client defaulted notificationFrames to 1922 for frameCount 3844
+2019-09-09 22:29:59.134 cn.dazhou.railway.ball D/org.doubango.ngn.media.NgnProxyAudioConsumer: Consumer BufferSize=7688,MinBufferSize=7688,TrueSampleRate=48000
+2019-09-09 22:29:59.138 cn.dazhou.railway.ball D/org.doubango.ngn.media.NgnProxyAudioConsumer: startCallback
+2019-09-09 22:29:59.141 cn.dazhou.railway.ball E/org.doubango.ngn.media.NgnProxyAudioProducer: callback.start()
+2019-09-09 22:29:59.143 cn.dazhou.railway.ball D/org.doubango.ngn.media.NgnProxyAudioConsumer: ===== Audio Player Thread (Start) =====
+2019-09-09 22:29:59.145 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnAVSession: setState(EARLY_MEDIA)
+2019-09-09 22:29:59.145 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnAVSession: initializeConsumersAndProducers()
+2019-09-09 22:29:59.145 cn.dazhou.railway.ball E/org.doubango.ngn.sip.NgnAVSession: 初始化音视频生产者时，super.getId() = 4, getId() = 4
+2019-09-09 22:29:59.168 cn.dazhou.railway.ball E/org.doubango.imsdroid.screens.ScreenAV: SipEvent：early_media
+2019-09-09 22:29:59.178 cn.dazhou.railway.ball E/SipEventProcessor: 呼叫状态: early_media, sessionId = 4, eventType = early_media, mediaType = audio phrase = Session Progress
+2019-09-09 22:29:59.184 cn.dazhou.railway.ball E/org.doubango.imsdroid.screens.ScreenAV: SipEvent：sip_response
+2019-09-09 22:29:59.184 cn.dazhou.railway.ball E/SipEventProcessor: 呼叫状态: sip_response, sessionId = 4, eventType = sip_response, mediaType = audio phrase = Session Progress
+2019-09-09 22:29:59.189 cn.dazhou.railway.ball E/org.doubango.imsdroid.screens.ScreenAV: SipEvent：sip_response
+2019-09-09 22:29:59.189 cn.dazhou.railway.ball E/SipEventProcessor: 呼叫状态: sip_response, sessionId = 4, eventType = sip_response, mediaType = audio phrase = OK
+2019-09-09 22:29:59.190 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnAVSession: setState(INCALL)
+2019-09-09 22:29:59.190 cn.dazhou.railway.ball D/org.doubango.ngn.sip.NgnAVSession: initializeConsumersAndProducers()
+2019-09-09 22:29:59.196 cn.dazhou.railway.ball E/org.doubango.imsdroid.screens.ScreenAV: SipEvent：connected
+2019-09-09 22:29:59.197 cn.dazhou.railway.ball E/SipEventProcessor: 呼叫状态: connected, sessionId = 4, eventType = connected, mediaType = audio phrase = Dialog connected
+2019-09-09 22:29:59.265 cn.dazhou.railway.ball E/org.doubango.ngn.sip.NgnSipSession: finalize(), 准备删除会话id为3的会话，对象类型为：NgnMessagingSession，引用数为：0
+    
+    --------- beginning of crash
+2019-09-09 22:29:59.265 cn.dazhou.railway.ball A/libc: Fatal signal 11 (SIGSEGV), code 1, fault addr 0x4 in tid 2859 (FinalizerDaemon)

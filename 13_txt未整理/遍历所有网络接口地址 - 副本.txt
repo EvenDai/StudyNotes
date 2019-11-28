@@ -1,0 +1,60 @@
+网络接口名以rmnet打头的代表的是移动卡的网络，以wlan打头的是wifi网络，以eth打头的是有线网络，lo代表的是本机地址（127.0.0.1）
+----------------------------------开始--------------------------------------
+interfaceName = sit0, displayName = sit0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+
+本地地址：
+interfaceName = lo, displayName = lo, isVirtual() = false, isUp() = true, isLoopback() = true, supportsMulticast() = false, isPointToPoint() = false
+HostName = localhost, Address = 127.0.0.1, isLoopbackAddress = true, isLinkLocalAddress = false, class = java.net.Inet4Address
+HostName = ip6-localhost, Address = ::1, isLoopbackAddress = true, isLinkLocalAddress = false, class = java.net.Inet6Address
+
+interfaceName = dummy0, displayName = dummy0, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+HostName = fe80::c07b:8eff:fe39:2b9d%dummy0, Address = fe80::c07b:8eff:fe39:2b9d%dummy0, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+
+移动卡地址：
+interfaceName = rmnet_data0, displayName = rmnet_data0, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+HostName = 172.18.82.214, Address = 172.18.82.214, isLoopbackAddress = false, isLinkLocalAddress = false, class = java.net.Inet4Address
+HostName = fe80::e077:df15:6c7:be6f%rmnet_data0, Address = fe80::e077:df15:6c7:be6f%rmnet_data0, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+
+interfaceName = rmnet_data7, displayName = rmnet_data7, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+HostName = fe80::583f:79ec:1bdc:949f%rmnet_data7, Address = fe80::583f:79ec:1bdc:949f%rmnet_data7, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+
+Wifi地址：
+interfaceName = wlan0, displayName = wlan0, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+HostName = 192.168.43.1, Address = 192.168.43.1, isLoopbackAddress = false, isLinkLocalAddress = false, class = java.net.Inet4Address
+HostName = fe80::a6d4:b2ff:fe1c:80f1%wlan0, Address = fe80::a6d4:b2ff:fe1c:80f1%wlan0, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+----------------------------------结束--------------------------------------
+
+掩码为：8
+网线状态发生改变, available = true, ip = error, mask = 255.0.0.0, gateway = dummy0
+ ----------------------------------开始--------------------------------------
+ interfaceName = sit0, displayName = sit0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+ interfaceName = wlan0, displayName = wlan0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+ interfaceName = p2p0, displayName = p2p0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+ interfaceName = eth0, displayName = eth0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+ interfaceName = lo, displayName = lo, isVirtual() = false, isUp() = true, isLoopback() = true, supportsMulticast() = false, isPointToPoint() = false
+ HostName = localhost, Address = 127.0.0.1, isLoopbackAddress = true, isLinkLocalAddress = false, class = java.net.Inet4Address
+ HostName = ip6-localhost, Address = ::1, isLoopbackAddress = true, isLinkLocalAddress = false, class = java.net.Inet6Address
+ interfaceName = dummy0, displayName = dummy0, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+ HostName = fe80::bcf4:22ff:fe81:51b4%dummy0, Address = fe80::bcf4:22ff:fe81:51b4%dummy0, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+ interfaceName = rmnet_data7, displayName = rmnet_data7, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+ HostName = fe80::9f48:42a3:b5f3:96c4%rmnet_data7, Address = fe80::9f48:42a3:b5f3:96c4%rmnet_data7, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+ ----------------------------------结束--------------------------------------
+
+
+ 网络已连接，type = 9 （网线）
+----------------------------------开始--------------------------------------
+interfaceName = sit0, displayName = sit0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+interfaceName = wlan0, displayName = wlan0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+interfaceName = p2p0, displayName = p2p0, isVirtual() = false, isUp() = false, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+interfaceName = lo, displayName = lo, isVirtual() = false, isUp() = true, isLoopback() = true, supportsMulticast() = false, isPointToPoint() = false
+HostName = localhost, Address = 127.0.0.1, isLoopbackAddress = true, isLinkLocalAddress = false, class = java.net.Inet4Address
+HostName = ip6-localhost, Address = ::1, isLoopbackAddress = true, isLinkLocalAddress = false, class = java.net.Inet6Address
+interfaceName = dummy0, displayName = dummy0, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+HostName = fe80::bcf4:22ff:fe81:51b4%dummy0, Address = fe80::bcf4:22ff:fe81:51b4%dummy0, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+interfaceName = rmnet_data7, displayName = rmnet_data7, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = false, isPointToPoint() = false
+HostName = fe80::9f48:42a3:b5f3:96c4%rmnet_data7, Address = fe80::9f48:42a3:b5f3:96c4%rmnet_data7, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+
+interfaceName = eth0, displayName = eth0, isVirtual() = false, isUp() = true, isLoopback() = false, supportsMulticast() = true, isPointToPoint() = false
+HostName = 192.168.1.19, Address = 192.168.1.19, isLoopbackAddress = false, isLinkLocalAddress = false, class = java.net.Inet4Address
+HostName = fe80::2e0:4cff:fe68:565%eth0, Address = fe80::2e0:4cff:fe68:565%eth0, isLoopbackAddress = false, isLinkLocalAddress = true, class = java.net.Inet6Address
+----------------------------------结束--------------------------------------

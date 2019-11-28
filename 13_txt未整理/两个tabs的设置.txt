@@ -1,0 +1,27 @@
+fragment_core_right.xml    
+		app:pstsShouldExpand="true"
+        app:pstsIndicatorHeight="100dp"
+        app:pstsIndicatorColor="@color/colorIndicator"
+        app:pstsTabPaddingLeftRight="0dp"
+		
+
+fragment_core_left.xml 	
+		app:pstsShouldExpand="true"	
+		app:pstsIndicatorHeight="100dp"
+		app:pstsIndicatorColor="@color/white"		
+		app:pstsTabPaddingLeftRight="0dp"
+		
+	public void setPageSelected(int position) {
+        clearState(mLastView);
+        if (delegatePageListener != null) {
+            delegatePageListener.onPageSelected(position);
+        }
+        View v = tabsContainer.getChildAt(position);
+        View target1 = v.findViewById(R.id.tv_tab);
+        if (target1 != null && target1 instanceof TextView) {
+            TextView textView = (TextView) target1;
+            textView.setTextColor(Color.parseColor("#1c7ffa"));
+        }
+        v.setSelected(true);
+        mLastView = v;
+    }
